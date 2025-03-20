@@ -15,3 +15,5 @@ lang-python/pyside2
 app-devel/qtcreator
 lang-ziglang/zig
 app-devel/ispc
+runtime-common/pocl
+app-devel/adaptivecpp
