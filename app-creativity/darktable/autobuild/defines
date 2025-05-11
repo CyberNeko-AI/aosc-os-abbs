@@ -6,7 +6,7 @@ PKGDEP="colord-gtk dbus-glib exiv2 flickcurl graphicsmagick gtk-3 \
         libxslt openexr openjpeg pugixml sdl sqlite libosmgpsmap \
         libcl jasper gmic lua-5.4 libheif libavif portmidi \
         libcamera libjxl"
-BUILDDEP="cmake intltool po4a llvm sphinx doxygen"
+BUILDDEP="cmake intltool po4a llvm-20 sphinx doxygen"
 PKGDES="Utility to organize and develop raw images"
 
 CMAKE_AFTER=(
@@ -22,6 +22,10 @@ CMAKE_AFTER=(
 	-DBUILD_SSE2_CODEPATHS=OFF
 	-DBUILD_TOOLS=ON
 	-DDONT_USE_INTERNAL_LUA=ON
+	-DENABLE_JASPER=ON
+	-DENABLE_LCMS=ON
+	-DENABLE_RAWSPEED=ON
+	-DLLVM_DIR=/usr/lib/llvm-20/lib/cmake/llvm
 	-DUSE_AVIF=ON
 	-DUSE_CAMERA_SUPPORT=ON
 	-DUSE_COLORD=ON
