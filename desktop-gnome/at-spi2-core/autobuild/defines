@@ -1,7 +1,7 @@
 PKGNAME=at-spi2-core
 PKGSEC=gnome
 PKGDEP="dbus glib x11-lib"
-BUILDDEP="gobject-introspection intltool meson ninja gi-docgen sphinx"
+BUILDDEP="gobject-introspection meson ninja"
 BUILDDEP__RETRO="intltool"
 BUILDDEP__ARMV4="${BUILDDEP__RETRO}"
 BUILDDEP__ARMV6HF="${BUILDDEP__RETRO}"
@@ -16,13 +16,21 @@ PKGDES="Protocol definitions and daemon for D-Bus at-spi"
 # atk and at-spi2-atk got merged into at-spi2-core
 PKGBREAK="gdm<=3.17.92 atk<=2.38.0-1 at-spi2-atk<=2.38.0-2"
 PKGREP="atk<=2.38.0-1 at-spi2-atk<=2.38.0-2"
-MESON_AFTER="-Ddocs=true \
-             -Dintrospection=enabled \
-             -Dx11=enabled"
-MESON_AFTER__RETRO=" \
-             ${MESON_AFTER} \
-             -Ddocs=false \
-             -Dintrospection=no"
+
+# Note: Installed API documentation is not encouraged.
+MESON_AFTER=(
+    '-Ddefault_bus=dbus-daemon'
+    '-Duse_systemd=true'
+    '-Dgtk2_atk_adaptor=true'
+    '-Ddocs=false'
+    '-Dintrospection=enabled'
+    '-Dx11=enabled'
+    '-Datk_only=false'
+)
+MESON_AFTER__RETRO=(
+    "${MESON_AFTER[@]}"
+    '-Dintrospection=no'
+)
 
 # Note: Extra Provides for Spiral (Debian compatibility)
 PKGPROV="libatspi2.0-0_spiral libatspi2.0-0-dev_spiral \
