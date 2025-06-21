@@ -1,0 +1,14 @@
+for i in 5 6; do
+    abinfo "Setting build directory: ${BLDDIR}${i} ..."
+    export BLDDIR="${BLDDIR}${i}"
+
+    abinfo "Setting CMake options ..."
+    export CMAKE_AFTER=(
+        "-DUSE_QT${i}=ON"
+    )
+
+    # Note: Template functions comes with abinfo.
+    build_cmakeninja_configure
+    build_cmakeninja_build
+    build_cmakeninja_install
+done

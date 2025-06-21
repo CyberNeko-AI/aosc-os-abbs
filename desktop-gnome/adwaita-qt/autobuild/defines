@@ -1,5 +1,4 @@
 PKGNAME=adwaita-qt
 PKGSEC=gnome
-PKGDEP="qt-5"
-BUILDDEP="cmake"
+PKGDEP="qt-5 qt-6"
 PKGDES="Adwaita theme for Qt-based applications"
