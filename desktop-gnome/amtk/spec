@@ -1,4 +1,4 @@
-VER=5.5.1
-SRCS="tbl::https://download.gnome.org/sources/amtk/${VER:0:3}/amtk-$VER.tar.xz"
-CHKSUMS="sha256::ec896dd017e2c1436852e5e60970fcd0830bd12148d57cc1bdc0d93826bddb9c"
-CHKUPDATE="anitya::id=17627"
+VER=5.9.1
+SRCS="git::commit=tags/$VER::https://gitlab.gnome.org/World/gedit/libgedit-amtk.git"
+CHKSUMS="SKIP"
+CHKUPDATE="anitya::id=374522"
