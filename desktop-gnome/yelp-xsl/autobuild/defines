@@ -3,5 +3,15 @@ PKGSEC=gnome
 BUILDDEP="intltool itstool libxml2 libxslt"
 PKGDES="Yelp stylesheets in XSL"
 
-ABSHADOW=no
+ABTYPE=meson
+
+# FIXME: -Dyelp_manual=false, requires xsldoc-scan but not sure where it
+#        comes from...
+MESON_AFTER=(
+    '-Ddita=true'
+    '-Ddocbook=true'
+    '-Dmallard=true'
+    '-Dyelp_manual=false'
+)
+
 ABHOST=noarch
