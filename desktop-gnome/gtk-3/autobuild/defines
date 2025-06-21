@@ -1,8 +1,8 @@
 PKGNAME=gtk-3
 PKGSEC=x11
 PKGDEP="adwaita-icon-theme at-spi2-core cairo colord x11-lib pango libepoxy \
-        shared-mime-info wayland libxkbcommon gdk-pixbuf \
-        cups glib harfbuzz fribidi fontconfig"
+        shared-mime-info wayland libxkbcommon gdk-pixbuf libcloudproviders \
+        cups glib harfbuzz fribidi fontconfig tracker"
 PKGDEP__RETRO=" \
         adwaita-icon-theme at-spi2-core cairo x11-lib pango libepoxy \
         shared-mime-info libxkbcommon gdk-pixbuf"
@@ -14,7 +14,7 @@ PKGDEP__LOONGSON2F="${PKGDEP__RETRO}"
 PKGDEP__M68K="${PKGDEP__RETRO}"
 PKGDEP__POWERPC="${PKGDEP__RETRO}"
 PKGDEP__PPC64="${PKGDEP__RETRO}"
-BUILDDEP="gobject-introspection gtk-doc vim wayland-protocols"
+BUILDDEP="docbook-xsl gobject-introspection wayland-protocols"
 BUILDDEP__RETRO=""
 BUILDDEP__ARMV4="${BUILDDEP__RETRO}"
 BUILDDEP__ARMV6HF="${BUILDDEP__RETRO}"
@@ -24,36 +24,39 @@ BUILDDEP__LOONGSON2F="${BUILDDEP__RETRO}"
 BUILDDEP__M68K="${BUILDDEP__RETRO}"
 BUILDDEP__POWERPC="${BUILDDEP__RETRO}"
 BUILDDEP__PPC64="${BUILDDEP__RETRO}"
-PKGDES="GIMP toolkit version 3"
+PKGDES="GTK graphical user interface toolkit (version 3)"
 
-MESON_AFTER="-Dx11_backend=true \
-             -Dwayland_backend=true \
-             -Dbroadway_backend=true \
-             -Dintrospection=true \
-             -Dgtk_doc=true \
-             -Dman=true \
-             -Dcolord=yes \
-             -Dprint_backends=auto \
-             -Dprofiler=false \
-             -Dbuiltin_immodules=all"
-MESON_AFTER__RETRO="-Dx11_backend=true \
-                    -Dwayland_backend=false \
-                    -Dbroadway_backend=false \
-                    -Dintrospection=false \
-                    -Dgtk_doc=false \
-                    -Dman=false \
-                    -Dcolord=no \
-                    -Dprint_backends=auto \
-                    -Dprofiler=false \
-                    -Dbuiltin_immodules=backend"
-MESON_AFTER__ARMV4="${MESON_AFTER__RETRO}"
-MESON_AFTER__ARMV6HF="${MESON_AFTER__RETRO}"
-MESON_AFTER__ARMV7HF="${MESON_AFTER__RETRO}"
-MESON_AFTER__I486="${MESON_AFTER__RETRO}"
-MESON_AFTER__LOONGSON2F="${MESON_AFTER__RETRO}"
-MESON_AFTER__M68K="${MESON_AFTER__RETRO}"
-MESON_AFTER__POWERPC="${MESON_AFTER__RETRO}"
-MESON_AFTER__PPC64="${MESON_AFTER__RETRO}"
+ABTYPE=meson
 
+# FIXME: Problem encountered: 'papi' backend not supported with meson yet.
+MESON_AFTER=(
+    '-Dx11_backend=true'
+    '-Dwayland_backend=true'
+    '-Dbroadway_backend=true'
+    '-Dxinerama=yes'
+    '-Dcloudproviders=true'
+    '-Dprofiler=false'
+    '-Dtracker3=true'
+    '-Dprint_backends=cups,file,lpr'
+    '-Dcolord=yes'
+    '-Dgtk_doc=false'
+    '-Dman=true'
+    '-Dintrospection=true'
+    '-Ddemos=true'
+    '-Dexamples=false'
+    '-Dinstalled_tests=false'
+    '-Dbuiltin_immodules=all'
+)
+MESON_AFTER__RETRO=(
+    "${MESON_AFTER[@]}"
+    '-Dwayland_backend=false'
+    '-Dbroadway_backend=false'
+    '-Dcloudproviders=false'
+    '-Dtracker3=false'
+    '-Dprint_backends='
+    '-Dcolord=no'
+    '-Dintrospection=false'
+    '-Ddemos=false'
+)
 # Note: Extra Provides for Spiral (Debian compatibility).
 PKGPROV="libgtk-3-0_spiral libgtk-3-dev_spiral"
