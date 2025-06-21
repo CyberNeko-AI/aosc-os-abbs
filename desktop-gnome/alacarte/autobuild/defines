@@ -5,6 +5,9 @@ BUILDDEP="docbook-xsl intltool libtool libxslt"
 PKGDES="Menu editor for GNOME"
 
 ABHOST=noarch
-AUTOTOOLS_AFTER="--prefix=/usr \
-                 --sysconfdir=/etc \
-                 PYTHON=/usr/bin/python3"
+
+ABTYPE=autotools
+AUTOTOOLS_AFTER=(
+    '--prefix=/usr'
+    '--sysconfdir=/etc'
+)
