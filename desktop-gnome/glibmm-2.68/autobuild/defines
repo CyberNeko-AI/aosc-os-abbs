@@ -1,22 +1,14 @@
 PKGNAME=glibmm-2.68
 PKGSEC=gnome
 PKGDEP="glib libsigc++-3.0"
-BUILDDEP="gtk-doc doxygen"
-BUILDDEP__RETRO=""
-BUILDDEP__ARMV4="${BUILDDEP__RETRO}"
-BUILDDEP__ARMV6HF="${BUILDDEP__RETRO}"
-BUILDDEP__ARMV7HF="${BUILDDEP__RETRO}"
-BUILDDEP__I486="${BUILDDEP__RETRO}"
-BUILDDEP__LOONGSON2F="${BUILDDEP__RETRO}"
-BUILDDEP__POWERPC="${BUILDDEP__RETRO}"
-BUILDDEP__PPC64="${BUILDDEP__RETRO}"
 PKGDES="C++ interface for GLib (2.68 ABI)"
 
 ABTYPE=meson
-MESON_AFTER="-Dbuild-deprecated-api=true \
-             -Dbuild-documentation=true \
-             -Dbuild-examples=true"
-MESON_AFTER__RETRO=" \
-             ${MESON_AFTER} \
-             -Dbuild-documentation=false \
-             -Dbuild-examples=false"
+
+MESON_AFTER=(
+    '-Dmaintainer-mode=false'
+    '-Dbuild-deprecated-api=true'
+    '-Dbuild-documentation=false'
+    '-Ddebug-refcounting=false'
+    '-Dbuild-examples=false'
+)
