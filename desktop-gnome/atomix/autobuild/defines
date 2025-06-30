@@ -1,5 +1,6 @@
 PKGNAME=atomix
 PKGSEC=gnome
-PKGDEP="gtk-3 librsvg libgnome-games-support"
-BUILDDEP="intltool"
-PKGDES="A puzzle game in which full molecules have to be built"
+PKGDEP="gtk-3 librsvg libgnome-games-support-1.8"
+PKGDES="A puzzle game of molecule building"
+
+ABTYPE=meson
