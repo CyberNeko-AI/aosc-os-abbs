@@ -1,8 +1,9 @@
 PKGNAME=libgnome-games-support
 PKGSEC=gnome
-PKGDEP="gtk-3 libgee"
-BUILDDEP="vala"
-PKGDES="Support library for GNOME games"
+PKGDEP="libgnome-games-support-2.0"
+PKGDES="Support library for GNOME games (transitional package for libgnome-games-support-2.0)"
 
-PKGBREAK="libgames-support<=1.1.90"
-PKGREP="libgames-support<=1.1.90"
+ABTYPE=dummy
+ABHOST=noarch
+
+PKGEPOCH=1
