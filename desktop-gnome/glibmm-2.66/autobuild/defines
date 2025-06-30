@@ -1,0 +1,17 @@
+PKGNAME=glibmm-2.66
+PKGSEC=gnome
+PKGDEP="glib libsigc++"
+PKGDES="C++ interface for GLib (2.66 ABI)"
+
+ABTYPE=meson
+
+MESON_AFTER=(
+    '-Dmaintainer-mode=false'
+    '-Dbuild-deprecated-api=true'
+    '-Dbuild-documentation=false'
+    '-Ddebug-refcounting=false'
+    '-Dbuild-examples=false'
+)
+
+PKGBREAK="glibmm<=2.66.2-1"
+PKGREP="glibmm<=2.66.2-1"
