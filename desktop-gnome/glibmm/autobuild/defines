@@ -1,14 +1,9 @@
 PKGNAME=glibmm
 PKGSEC=gnome
-PKGDEP="glib libsigc++"
-PKGDES="C++ interface for GLib"
+PKGDEP="glibmm-2.68"
+PKGDES="C++ interface for GLib (transitional package for glibmm-2.68)"
 
-ABTYPE=meson
+ABTYPE=dummy
+ABHOST=noarch
 
-MESON_AFTER=(
-    '-Dmaintainer-mode=false'
-    '-Dbuild-deprecated-api=true'
-    '-Dbuild-documentation=false'
-    '-Ddebug-refcounting=false'
-    '-Dbuild-examples=false'
-)
+PKGEPOCH=1
