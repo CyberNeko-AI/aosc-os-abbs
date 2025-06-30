@@ -1,9 +1,13 @@
 PKGNAME=gsettings-desktop-schemas
 PKGSEC=gnome
 PKGDEP="glib"
-BUILDDEP="gobject-introspection intltool"
-PKGDES="Shared GSettings schemas for the desktop"
+BUILDDEP="gobject-introspection"
+PKGDES="Shared GSettings schemas for GNOME desktop components"
 
-MESON_AFTER="-Dintrospection=true"
+ABTYPE=meson
+
+MESON_AFTER=(
+    '-Dintrospection=true'
+)
 
 ABHOST=noarch

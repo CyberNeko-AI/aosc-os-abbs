@@ -1,5 +1,4 @@
-VER=42.0
+VER=48.0
 SRCS="https://download.gnome.org/sources/gsettings-desktop-schemas/${VER%%.*}/gsettings-desktop-schemas-$VER.tar.xz"
-CHKSUMS="sha256::6686335a9ed623f7ae2276fefa50a410d4e71d4231880824714070cb317323d2"
+CHKSUMS="sha256::e68f155813bf18f865a8b2c8e9d473588b6ccadcafbb666ab788857c6c2d1bd3"
 CHKUPDATE="anitya::id=13139"
-REL=1
