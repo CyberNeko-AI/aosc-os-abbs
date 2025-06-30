@@ -1,0 +1,10 @@
+PKGNAME=libgnome-games-support-2.0
+PKGSEC=gnome
+PKGDEP="gtk-4 libgee"
+BUILDDEP="vala"
+PKGDES="Support library for GNOME games (2.0 ABI)"
+
+ABTYPE=meson
+
+PKGBREAK="libgames-support<=1.1.90"
+PKGREP="libgames-support<=1.1.90"
