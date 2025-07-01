@@ -1,4 +1,4 @@
-VER=42.0
+VER=48.0
 SRCS="https://download.gnome.org/sources/baobab/${VER%.*}/baobab-$VER.tar.xz"
-CHKSUMS="sha256::4b1aabe6bab1582b3fea79a2829bce7f2415bb6e5062f25357aeedd5317a50dc"
+CHKSUMS="sha256::54592504d49d807f23591be7e7eef10c6c9dfcb7ac527b81c3acd58787b26fda"
 CHKUPDATE="anitya::id=10907"
