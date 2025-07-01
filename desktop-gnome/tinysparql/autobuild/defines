@@ -1,0 +1,21 @@
+PKGNAME=tinysparql
+PKGSEC=gnome
+PKGDEP="avahi dbus glib icu json-glib libsoup-3 libxml2 snowball sqlite"
+BUILDDEP="asciidoc gobject-introspection vala"
+PKGDES="Library to implement a RDF triplestore with SPARQL 1.1 interface"
+
+ABTYPE=meson
+
+# Note: -Dbuiltin_modules=false, upstream default.
+MESON_AFTER=(
+    '-Ddocs=false'
+    '-Dman=true'
+    '-Dstemmer=enabled'
+    '-Dunicode_support=icu'
+    '-Davahi=enabled'
+    '-Dbash_completion=true'
+    '-Dsystemd_user_services=true'
+    '-Dintrospection=enabled'
+    '-Dvapi=enabled'
+    '-Dbuiltin_modules=false'
+)
