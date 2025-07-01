@@ -19,3 +19,6 @@ MESON_AFTER=(
     '-Dvapi=enabled'
     '-Dbuiltin_modules=false'
 )
+
+PKGBREAK="tracker<=3.7.3-2"
+PKGREP="tracker<=3.7.3-2"
