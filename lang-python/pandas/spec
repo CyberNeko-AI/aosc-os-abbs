@@ -1,4 +1,4 @@
-VER=2.1.2
+VER=2.3.2
 SRCS="tbl::https://pypi.io/packages/source/p/pandas/pandas-$VER.tar.gz"
-CHKSUMS="sha256::52897edc2774d2779fbeb6880d2cfb305daa0b1a29c16b91f531a18918a6e0f3"
+CHKSUMS="sha256::ab7b58f8f82706890924ccdfb5f48002b83d2b5a3845976a9fb705d36c34dcdb"
 CHKUPDATE="anitya::id=7578"
