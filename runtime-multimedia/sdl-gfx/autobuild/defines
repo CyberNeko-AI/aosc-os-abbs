@@ -1,9 +1,12 @@
 PKGNAME=sdl-gfx
 PKGSEC=libs
-PKGDEP="sdl"
+PKGDEP="sdl12-compat"
 PKGDES="SDL Graphic Primitives"
 
-AUTOTOOLS_AFTER="--enable-mmx=no"
-AUTOTOOLS_AFTER__AMD64=" \
-                 ${AUTOTOOLS_AFTER} \
-                 --enable-mmx=yes"
+AUTOTOOLS_AFTER=(
+	"--enable-mmx=no"
+)
+AUTOTOOLS_AFTER__AMD64=(
+	"${AUTOTOOLS_AFTER}"
+	"--enable-mmx=yes"
+)
