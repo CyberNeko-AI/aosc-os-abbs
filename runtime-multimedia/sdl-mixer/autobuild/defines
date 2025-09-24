@@ -1,6 +1,6 @@
 PKGNAME=sdl-mixer
 PKGDES="SDL Mixer"
-PKGDEP="sdl libvorbis libmad"
+PKGDEP="sdl12-compat libvorbis libmad"
 PKGSEC=libs
 AUTOTOOLS_AFTER=(
 	"--enable-music-mp3-mad-gpl"
