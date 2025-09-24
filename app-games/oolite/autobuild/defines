@@ -1,7 +1,8 @@
 PKGNAME=oolite
 PKGSEC=games
 PKGDEP="desktop-file-utils espeak gcc-runtime gmp gnustep-base gnustep-make \
-        libogg libpng libvorbis mesa nspr openal-soft portaudio sdl sdl-mixer"
+	js-102 libogg libpng libvorbis mesa nspr openal-soft portaudio \
+	sdl12-compat sdl-mixer"
 PKGDES="Space sim game, inspired by Elite"
 ABTYPE=self
 

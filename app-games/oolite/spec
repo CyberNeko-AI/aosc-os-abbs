@@ -1,5 +1,5 @@
-VER=1.90
-SRCS="git::commit=0b1ff49a78653669bfe8e153ae09699ba49cc496::https://github.com/OoliteProject/oolite.git"
+VER=1.91.0.7708
+SRCS="git::commit=30bbc4cd0251dc0112428e205f4ac0e5cfe43045::https://github.com/OoliteProject/oolite.git"
 CHKSUMS="SKIP"
 CHKUPDATE="anitya::id=17358"
-REL=3
+REL=4
