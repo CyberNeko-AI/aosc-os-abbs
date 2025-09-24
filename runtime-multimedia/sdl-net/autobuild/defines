@@ -1,4 +1,4 @@
 PKGNAME=sdl-net
 PKGSEC=libs
-PKGDEP="sdl"
+PKGDEP="sdl12-compat"
 PKGDES="A lightweight cross platform networking library"
