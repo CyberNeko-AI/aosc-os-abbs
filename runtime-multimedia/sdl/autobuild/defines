@@ -1,9 +1,0 @@
-PKGNAME=sdl
-PKGSEC=libs
-PKGDEP="sdl12-compat"
-PKGDES="Simple Directmedia Layer (transitional package for sdl12-compat)"
-
-ABTYPE=dummy
-ABHOST=noarch
-
-PKGEPOCH=1
