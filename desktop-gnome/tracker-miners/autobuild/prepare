@@ -1,0 +1,3 @@
+# FIXME: error: passing argument 2 of ‘g_once_impl’ from incompatible pointer type
+abinfo "Specifying language standard to GNU C17 ..."
+export CFLAGS="$CFLAGS -std=gnu17"
