@@ -1,0 +1,4 @@
+# FIXME: `djvulibre-djview4.desktop` use `Exec=djview4 %f`
+abinfo "Create djview4 soft link ..."
+cd "$PKGDIR"/usr/bin
+ln -sv djview "$PKGDIR"/usr/bin/djview4
