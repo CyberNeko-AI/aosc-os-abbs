@@ -1,0 +1,8 @@
+PKGNAME=gpgmepp
+PKGSEC=libs
+PKGDEP="gpgme"
+PKGDES="A C++ wrapper to gpgme"
+ABTYPE=cmakeninja
+
+# There was a different project named gpgmepp
+PKGEPOCH=1
