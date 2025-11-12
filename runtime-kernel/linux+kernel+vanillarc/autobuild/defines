@@ -1,0 +1,6 @@
+PKGNAME=linux+kernel+vanillarc
+PKGSEC=kernel
+PKGDEP="linux-kernel-vanillarc-6.19.0"
+PKGDES="Vanilla (without AOSC patches) Linux Kernel (Prepatch)"
+ABTYPE=dummy
+ABHOST=noarch
