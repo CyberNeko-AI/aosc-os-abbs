@@ -1,7 +1,7 @@
 From 57294694fe51591e692344595aa0d3e14cb3fe8f Mon Sep 17 00:00:00 2001
 From: Xinhui Yang <cyan@cyano.uk>
 Date: Thu, 11 Sep 2025 12:06:33 +0800
-Subject: [PATCH 60/70] 10_linux: fix initrd detection when generating submenu
+Subject: [PATCH 60/71] 10_linux: fix initrd detection when generating submenu
  entries
 
 The condition that controls the initrd message is awfully wrong. It
@@ -61,5 +61,5 @@ index 704abcbaa..00c6fe529 100644
  			args="$ARGS"
  		fi
 -- 
-2.51.0
+2.52.0
 

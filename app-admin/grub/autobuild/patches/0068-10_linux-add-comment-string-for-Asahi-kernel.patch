@@ -1,7 +1,7 @@
 From 21cf3d60e5731fce4f9568c526f991c1325d5453 Mon Sep 17 00:00:00 2001
 From: Xinhui Yang <cyan@cyano.uk>
 Date: Mon, 27 Oct 2025 18:21:07 +0800
-Subject: [PATCH 68/70] 10_linux: add comment string for Asahi kernel
+Subject: [PATCH 68/71] 10_linux: add comment string for Asahi kernel
 
 * Update PO Template.
 * Merge translations with the PO Template.
@@ -4322,5 +4322,5 @@ index 78e38d01a..f27a09b1b 100644
  			gettext_printf "Kernel variant '%s'" "$1"
  			;;
 -- 
-2.51.0
+2.52.0
 
