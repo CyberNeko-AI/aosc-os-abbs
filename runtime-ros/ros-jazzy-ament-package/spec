@@ -1,0 +1,4 @@
+VER=0.16.4+1
+SRCS="git::commit=tags/release/jazzy/ament_package/${VER/+/-}::https://github.com/ros2-gbp/ament_package-release.git"
+CHKSUMS="SKIP"
+CHKUPDATE="github::repo=ros2-gbp/ament_package-release;pattern=release/jazzy/ament_package/.*"
