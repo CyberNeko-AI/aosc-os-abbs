@@ -1,0 +1,14 @@
+PKGNAME=ros-jazzy-statistics-msgs
+PKGSEC=ros
+PKGDEP="ros-jazzy-ros-workspace ros-jazzy-builtin-interfaces ros-jazzy-rosidl-default-runtime ros-jazzy-builtin-interfaces"
+BUILDDEP="ros-jazzy-ament-cmake ros-jazzy-rosidl-default-generators ros-jazzy-ament-lint-common"
+PKGDES="Message definitions for reporting statistics for topics and system resources"
+
+ABTYPE=cmakeninja
+PREFIX="/opt/ros/jazzy"
+ABSPLITDBG=0
+NOSTATIC=0
+CMAKE_AFTER=(
+    "-DCMAKE_PREFIX_PATH=/opt/ros/jazzy"
+    "-DBUILD_TESTING=OFF"
+)
