@@ -1,0 +1,11 @@
+PKGNAME=ros-jazzy-ament-pycodestyle
+PKGSEC=ros
+PKGDEP="ros-jazzy-ros-workspace pycodestyle"
+
+PKGDES="The ability to check code against the style conventions in PEP 8 and"
+
+ABTYPE=python
+PREFIX="/opt/ros/jazzy"
+ABSPLITDBG=0
+NOPYTHON2=1
+ABHOST=noarch
