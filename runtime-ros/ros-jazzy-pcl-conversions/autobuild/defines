@@ -1,0 +1,14 @@
+PKGNAME=ros-jazzy-pcl-conversions
+PKGSEC=ros
+PKGDEP="ros-jazzy-ros-workspace eigen-3 ros-jazzy-message-filters ros-jazzy-pcl-msgs ros-jazzy-rclcpp ros-jazzy-sensor-msgs ros-jazzy-std-msgs pcl"
+BUILDDEP="ros-jazzy-ament-cmake ros-jazzy-ament-cmake-gtest"
+PKGDES="Provides conversions from PCL data types and ROS message types"
+
+ABTYPE=cmakeninja
+PREFIX="/opt/ros/jazzy"
+ABSPLITDBG=0
+NOSTATIC=0
+CMAKE_AFTER=(
+    "-DCMAKE_PREFIX_PATH=/opt/ros/jazzy"
+    "-DBUILD_TESTING=OFF"
+)
