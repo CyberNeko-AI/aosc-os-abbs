@@ -1,0 +1,11 @@
+PKGNAME=ros-jazzy-ament-xmllint
+PKGSEC=ros
+PKGDEP="ros-jazzy-ros-workspace ros-jazzy-ament-lint libxml2"
+BUILDDEP="ros-jazzy-ament-copyright ros-jazzy-ament-flake8 ros-jazzy-ament-pep257 pytest"
+PKGDES="The ability to check XML files like the package manifest using xmllint"
+
+ABTYPE=python
+PREFIX="/opt/ros/jazzy"
+ABSPLITDBG=0
+NOPYTHON2=1
+ABHOST=noarch
