@@ -1,0 +1,14 @@
+PKGNAME=ros-jazzy-rviz-assimp-vendor
+PKGSEC=ros
+PKGDEP="ros-jazzy-ros-workspace assimp"
+BUILDDEP="ros-jazzy-ament-cmake ros-jazzy-ament-cmake-vendor-package ros-jazzy-ament-cmake-lint-cmake ros-jazzy-ament-cmake-xmllint ros-jazzy-ament-lint-auto"
+PKGDES="Wrapper around assimp, providing nothing but a dependency on assimp, on some systems"
+
+ABTYPE=cmakeninja
+PREFIX="/opt/ros/jazzy"
+ABSPLITDBG=0
+NOSTATIC=0
+CMAKE_AFTER=(
+    "-DCMAKE_PREFIX_PATH=/opt/ros/jazzy"
+    "-DBUILD_TESTING=OFF"
+)
