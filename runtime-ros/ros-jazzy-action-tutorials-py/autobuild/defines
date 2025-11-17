@@ -1,0 +1,11 @@
+PKGNAME=ros-jazzy-action-tutorials-py
+PKGSEC=ros
+PKGDEP="ros-jazzy-ros-workspace ros-jazzy-action-tutorials-interfaces ros-jazzy-rclpy"
+BUILDDEP="ros-jazzy-ament-copyright ros-jazzy-ament-flake8 ros-jazzy-ament-pep257 pytest"
+PKGDES="Python action tutorial code"
+
+ABTYPE=python
+PREFIX="/opt/ros/jazzy"
+ABSPLITDBG=0
+NOPYTHON2=1
+ABHOST=noarch
