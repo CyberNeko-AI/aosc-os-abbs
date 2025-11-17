@@ -1,0 +1,11 @@
+PKGNAME=ros-jazzy-rqt-service-caller
+PKGSEC=ros
+PKGDEP="ros-jazzy-ros-workspace ros-jazzy-rqt-gui ros-jazzy-rqt-gui-py ros-jazzy-rqt-py-common"
+BUILDDEP="pytest"
+PKGDES="rqt_service_caller provides a GUI plugin for calling arbitrary services"
+
+ABTYPE=python
+PREFIX="/opt/ros/jazzy"
+ABSPLITDBG=0
+NOPYTHON2=1
+ABHOST=noarch
