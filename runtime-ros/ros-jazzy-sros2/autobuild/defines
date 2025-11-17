@@ -1,0 +1,11 @@
+PKGNAME=ros-jazzy-sros2
+PKGSEC=ros
+PKGDEP="ros-jazzy-ros-workspace ros-jazzy-ament-index-python argcomplete cryptography lxml ros-jazzy-rclpy ros-jazzy-ros2cli"
+BUILDDEP="ros-jazzy-ament-copyright ros-jazzy-ament-flake8 ros-jazzy-ament-mypy ros-jazzy-ament-pep257 pytest ros-jazzy-ros-testing ros-jazzy-test-msgs"
+PKGDES="Command line tools for managing SROS2 keys"
+
+ABTYPE=python
+PREFIX="/opt/ros/jazzy"
+ABSPLITDBG=0
+NOPYTHON2=1
+ABHOST=noarch
