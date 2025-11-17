@@ -1,0 +1,11 @@
+PKGNAME=ros-jazzy-rosidl-runtime-py
+PKGSEC=ros
+PKGDEP="ros-jazzy-ros-workspace numpy yaml ros-jazzy-rosidl-parser"
+BUILDDEP="ros-jazzy-ament-copyright ros-jazzy-ament-flake8 ros-jazzy-ament-pep257 ros-jazzy-ament-xmllint pytest ros-jazzy-std-msgs ros-jazzy-std-srvs ros-jazzy-test-msgs"
+PKGDES="Runtime utilities for working with generated ROS interfaces in Python"
+
+ABTYPE=python
+PREFIX="/opt/ros/jazzy"
+ABSPLITDBG=0
+NOPYTHON2=1
+ABHOST=noarch
