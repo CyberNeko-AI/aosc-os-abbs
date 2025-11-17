@@ -1,0 +1,11 @@
+PKGNAME=ros-jazzy-launch
+PKGSEC=ros
+PKGDEP="ros-jazzy-ros-workspace ros-jazzy-osrf-pycommon ros-jazzy-ament-index-python lark-parser yaml"
+BUILDDEP="ros-jazzy-ament-copyright ros-jazzy-ament-flake8 ros-jazzy-ament-pep257 ros-jazzy-ament-mypy pytest"
+PKGDES="The ROS launch tool"
+
+ABTYPE=python
+PREFIX="/opt/ros/jazzy"
+ABSPLITDBG=0
+NOPYTHON2=1
+ABHOST=noarch
