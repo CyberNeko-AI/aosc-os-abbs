@@ -1,0 +1,11 @@
+PKGNAME=ros-jazzy-ament-uncrustify
+PKGSEC=ros
+PKGDEP="ros-jazzy-ros-workspace ros-jazzy-uncrustify-vendor"
+BUILDDEP="ros-jazzy-ament-copyright ros-jazzy-ament-flake8 ros-jazzy-ament-pep257 ros-jazzy-ament-pycodestyle pytest"
+PKGDES="The ability to check code against style conventions using uncrustify"
+
+ABTYPE=python
+PREFIX="/opt/ros/jazzy"
+ABSPLITDBG=0
+NOPYTHON2=1
+ABHOST=noarch
