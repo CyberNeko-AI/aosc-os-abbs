@@ -1,0 +1,14 @@
+PKGNAME=ros-jazzy-rviz2
+PKGSEC=ros
+PKGDEP="ros-jazzy-ros-workspace ros-jazzy-rviz-common ros-jazzy-rviz-ogre-vendor ros-jazzy-rviz-default-plugins python-3"
+BUILDDEP="ros-jazzy-ament-cmake qt-5 ros-jazzy-ament-cmake-cppcheck ros-jazzy-ament-cmake-cpplint ros-jazzy-ament-cmake-lint-cmake ros-jazzy-ament-cmake-pytest ros-jazzy-ament-cmake-uncrustify ros-jazzy-ament-cmake-xmllint ros-jazzy-ament-lint-auto ros-jazzy-geometry-msgs yaml ros-jazzy-rclcpp ros-jazzy-sensor-msgs"
+PKGDES="3D visualization tool for ROS"
+
+ABTYPE=cmakeninja
+PREFIX="/opt/ros/jazzy"
+ABSPLITDBG=0
+NOSTATIC=0
+CMAKE_AFTER=(
+    "-DCMAKE_PREFIX_PATH=/opt/ros/jazzy"
+    "-DBUILD_TESTING=OFF"
+)
