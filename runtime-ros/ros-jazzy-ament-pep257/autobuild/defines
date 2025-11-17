@@ -1,0 +1,11 @@
+PKGNAME=ros-jazzy-ament-pep257
+PKGSEC=ros
+PKGDEP="ros-jazzy-ros-workspace ros-jazzy-ament-lint pydocstyle"
+BUILDDEP="ros-jazzy-ament-flake8 pytest"
+PKGDES="The ability to check code against the docstring style conventions in"
+
+ABTYPE=python
+PREFIX="/opt/ros/jazzy"
+ABSPLITDBG=0
+NOPYTHON2=1
+ABHOST=noarch
