@@ -1,0 +1,14 @@
+PKGNAME=ros-jazzy-image-geometry
+PKGSEC=ros
+PKGDEP="ros-jazzy-ros-workspace opencv ros-jazzy-sensor-msgs deprecated"
+BUILDDEP="ros-jazzy-ament-cmake-python ros-jazzy-ament-cmake-ros ros-jazzy-ament-cmake-gtest ros-jazzy-ament-cmake-pytest"
+PKGDES="\`image_geometry\` contains C++ and Python libraries for interpreting images"
+
+ABTYPE=cmakeninja
+PREFIX="/opt/ros/jazzy"
+ABSPLITDBG=0
+NOSTATIC=0
+CMAKE_AFTER=(
+    "-DCMAKE_PREFIX_PATH=/opt/ros/jazzy"
+    "-DBUILD_TESTING=OFF"
+)
