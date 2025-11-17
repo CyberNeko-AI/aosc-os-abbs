@@ -1,0 +1,11 @@
+PKGNAME=ros-jazzy-teleop-twist-keyboard
+PKGSEC=ros
+PKGDEP="ros-jazzy-ros-workspace ros-jazzy-geometry-msgs ros-jazzy-rcl-interfaces ros-jazzy-rclpy"
+BUILDDEP="ros-jazzy-ament-copyright ros-jazzy-ament-flake8 ros-jazzy-ament-pep257 ros-jazzy-ament-xmllint pytest"
+PKGDES="A robot-agnostic teleoperation node to convert keyboard commands to Twist"
+
+ABTYPE=python
+PREFIX="/opt/ros/jazzy"
+ABSPLITDBG=0
+NOPYTHON2=1
+ABHOST=noarch

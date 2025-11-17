@@ -1,0 +1,4 @@
+VER=2.4.1+1
+SRCS="git::commit=tags/release/jazzy/teleop_twist_keyboard/${VER/+/-}::https://github.com/ros2-gbp/teleop_twist_keyboard-release.git"
+CHKSUMS="SKIP"
+CHKUPDATE="github::repo=ros2-gbp/teleop_twist_keyboard-release;pattern=release/jazzy/teleop_twist_keyboard/.*"
