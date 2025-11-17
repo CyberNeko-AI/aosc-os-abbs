@@ -1,0 +1,9 @@
+PKGNAME=sip4
+PKGSEC=python
+PKGDES="A tool that makes it easy to create Python bindings for C and C++ libraries"
+PKGDEP="python-3 toml flex bison"
+BUILDDEP="python-build wheel python-installer setuptools setuptools-scm"
+
+ABTYPE=plainmake
+NOPYTHON2=1
+ABHOST=noarch

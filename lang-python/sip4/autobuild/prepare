@@ -1,0 +1,2 @@
+python3 "$SRCDIR"/build.py prepare
+python3 "$SRCDIR"/configure.py
