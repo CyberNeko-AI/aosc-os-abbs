@@ -1,0 +1,14 @@
+PKGNAME=ros-jazzy-rqt-common-plugins
+PKGSEC=ros
+PKGDEP="ros-jazzy-ros-workspace ros-jazzy-rqt-action ros-jazzy-rqt-bag ros-jazzy-rqt-bag-plugins ros-jazzy-rqt-console ros-jazzy-rqt-graph ros-jazzy-rqt-image-view ros-jazzy-rqt-msg ros-jazzy-rqt-plot ros-jazzy-rqt-publisher ros-jazzy-rqt-py-common ros-jazzy-rqt-py-console ros-jazzy-rqt-reconfigure ros-jazzy-rqt-service-caller ros-jazzy-rqt-shell ros-jazzy-rqt-srv ros-jazzy-rqt-topic"
+BUILDDEP="ros-jazzy-ament-cmake"
+PKGDES="rqt_common_plugins metapackage provides ROS backend graphical tools suite that can be used on/off of robot runtime"
+
+ABTYPE=cmakeninja
+PREFIX="/opt/ros/jazzy"
+ABSPLITDBG=0
+NOSTATIC=0
+CMAKE_AFTER=(
+    "-DCMAKE_PREFIX_PATH=/opt/ros/jazzy"
+    "-DBUILD_TESTING=OFF"
+)
