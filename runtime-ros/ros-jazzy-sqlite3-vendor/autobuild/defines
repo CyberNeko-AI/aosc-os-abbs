@@ -1,0 +1,14 @@
+PKGNAME=ros-jazzy-sqlite3-vendor
+PKGSEC=ros
+PKGDEP="ros-jazzy-ros-workspace sqlite"
+BUILDDEP="ros-jazzy-ament-cmake ros-jazzy-ament-cmake-vendor-package"
+PKGDES="SQLite 3 vendor package"
+
+ABTYPE=cmakeninja
+PREFIX="/opt/ros/jazzy"
+ABSPLITDBG=0
+NOSTATIC=0
+CMAKE_AFTER=(
+    "-DCMAKE_PREFIX_PATH=/opt/ros/jazzy"
+    "-DBUILD_TESTING=OFF"
+)
