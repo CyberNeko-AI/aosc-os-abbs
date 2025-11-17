@@ -1,0 +1,14 @@
+PKGNAME=ros-jazzy-cyclonedds
+PKGSEC=ros
+PKGDEP="ros-jazzy-ros-workspace ros-jazzy-iceoryx-binding-c ros-jazzy-iceoryx-posh ros-jazzy-iceoryx-hoofs openssl"
+BUILDDEP="cmake"
+PKGDES="Eclipse Cyclone DDS is a very performant and robust open-source DDS implementation. Cyclone DDS is developed completely in the open as an Eclipse IoT project"
+
+ABTYPE=cmakeninja
+PREFIX="/opt/ros/jazzy"
+ABSPLITDBG=0
+NOSTATIC=0
+CMAKE_AFTER=(
+    "-DCMAKE_PREFIX_PATH=/opt/ros/jazzy"
+    "-DBUILD_TESTING=OFF"
+)
