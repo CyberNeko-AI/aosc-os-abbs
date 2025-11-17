@@ -1,0 +1,4 @@
+VER=2.5.1+3
+SRCS="git::commit=tags/release/jazzy/depthimage_to_laserscan/${VER/+/-}::https://github.com/ros2-gbp/depthimage_to_laserscan-release.git"
+CHKSUMS="SKIP"
+CHKUPDATE="github::repo=ros2-gbp/depthimage_to_laserscan-release;pattern=release/jazzy/depthimage_to_laserscan/.*"
