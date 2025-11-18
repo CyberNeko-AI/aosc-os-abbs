@@ -5,7 +5,8 @@ PKGDEP="catdoc exiv2 ebook-tools ffmpeg karchive kconfig kcoreaddons \
 BUILDDEP="doxygen extra-cmake-modules"
 PKGDES="A library for extracting file metadata"
 
-CMAKE_AFTER="-DBUILD_COVERAGE=OFF \
+CMAKE_AFTER="-DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
+             -DBUILD_COVERAGE=OFF \
              -DBUILD_QCH=ON \
              -DBUILD_TESTING=OFF \
              -DKDE_INSTALL_PREFIX_SCRIPT=OFF \
