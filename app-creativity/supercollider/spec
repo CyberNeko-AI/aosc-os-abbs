@@ -1,4 +1,4 @@
-VER=3.13.0
+VER=3.14.1
 SRCS="git::commit=tags/Version-$VER::https://github.com/supercollider/supercollider.git"
 CHKSUMS="SKIP"
 CHKUPDATE="anitya::id=16290"
