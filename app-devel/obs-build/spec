@@ -1,0 +1,3 @@
+VER=20251107
+SRCS="git::commit=tags/${VER}::https://github.com/openSUSE/obs-build.git"
+CHKSUMS="SKIP"

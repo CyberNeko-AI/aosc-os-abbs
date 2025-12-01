@@ -1,0 +1,4 @@
+PKGNAME=obs-build
+PKGDES="Build scripts for Open Build Service that can be used standalone too"
+PKGSEC=devel
+PKGDEP="bash binutils findutils perl tar psmisc"
