@@ -1,0 +1,12 @@
+security = true
+
+[name]
+default = "libtiff Security Update"
+zh_CN = "libtiff 安全更新"
+
+[caution]
+default = "libtiff has fixed a total of 29 vulnerabilities from 2023 to 2025, including 8 high-risk vulnerabilities"
+zh_CN = "libtiff 修复了 2023-2025 年共计 29 处漏洞，其中高危漏洞 8 处"
+
+[packages-v2]
+libtiff = "< 4.7.1"
