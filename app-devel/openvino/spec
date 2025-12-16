@@ -1,0 +1,4 @@
+VER=2025.4.0
+SRCS="git::commit=tags/$VER;copy-repo=true::https://github.com/openvinotoolkit/openvino"
+CHKSUMS="SKIP"
+CHKUPDATE="anitya::id=382818"
