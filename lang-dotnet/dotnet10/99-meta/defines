@@ -1,0 +1,9 @@
+PKGNAME=dotnet10
+PKGSEC=devel
+PKGDES="Microsoft .NET 10.0"
+PKGDEP="dotnet-sdk-10.0"
+
+ABSPLITDBG=0
+ABTYPE=dummy
+
+FAIL_ARCH="(loongson3)"

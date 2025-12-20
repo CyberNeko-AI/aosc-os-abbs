@@ -1,0 +1,77 @@
+From d1f337419c1562b56400cc3c547fbd1f22ada9d1 Mon Sep 17 00:00:00 2001
+From: Viktor Hofer <viktor.hofer@microsoft.com>
+Date: Mon, 5 Jan 2026 14:06:17 +0100
+Subject: [PATCH 3/5] Fix build (#4043)
+
+Co-authored-by: Eric St. John <ericstj@microsoft.com>
+---
+ ...crosoft.CodeAnalysis.LanguageServer.csproj |  3 ++
+ ...assembly-version-calculation-in-2026.patch | 42 +++++++++++++++++++
+ 2 files changed, 45 insertions(+)
+ create mode 100644 src/source-build-reference-packages/src/externalPackages/patches/azure-activedirectory-identitymodel-extensions-for-dotnet/0002-Fix-assembly-version-calculation-in-2026.patch
+
+diff --git a/src/roslyn/src/LanguageServer/Microsoft.CodeAnalysis.LanguageServer/Microsoft.CodeAnalysis.LanguageServer.csproj b/src/roslyn/src/LanguageServer/Microsoft.CodeAnalysis.LanguageServer/Microsoft.CodeAnalysis.LanguageServer.csproj
+index c32f01a6695..fd8df01120c 100644
+--- a/src/roslyn/src/LanguageServer/Microsoft.CodeAnalysis.LanguageServer/Microsoft.CodeAnalysis.LanguageServer.csproj
++++ b/src/roslyn/src/LanguageServer/Microsoft.CodeAnalysis.LanguageServer/Microsoft.CodeAnalysis.LanguageServer.csproj
+@@ -73,6 +73,9 @@
+   <ItemGroup>
+     <!-- Include MIBC data if available.  This is produced by a separate profiling pipeline for the C# extension, and injected in official builds -->
+     <PublishReadyToRunPgoFiles Condition="'$(VSCodeOptimizationDataRoot)'!=''" Include="$(VSCodeOptimizationDataRoot)\*.mibc" />
++
++    <!-- Workaround https://github.com/dotnet/dotnet/issues/3995 -->
++    <PublishReadyToRunExclude Include="Microsoft.VisualStudio.TestPlatform.Common.dll" />
+   </ItemGroup>
+ 
+   <Target Name="SetCrossgen2ExtraArgs" BeforeTargets="ResolveReadyToRunCompilers" Condition="'$(PublishReadyToRun)' == 'true'">
+diff --git a/src/source-build-reference-packages/src/externalPackages/patches/azure-activedirectory-identitymodel-extensions-for-dotnet/0002-Fix-assembly-version-calculation-in-2026.patch b/src/source-build-reference-packages/src/externalPackages/patches/azure-activedirectory-identitymodel-extensions-for-dotnet/0002-Fix-assembly-version-calculation-in-2026.patch
+new file mode 100644
+index 00000000000..0018b8b51ce
+--- /dev/null
++++ b/src/source-build-reference-packages/src/externalPackages/patches/azure-activedirectory-identitymodel-extensions-for-dotnet/0002-Fix-assembly-version-calculation-in-2026.patch
+@@ -0,0 +1,42 @@
++From 22c9a70c8e0fe6a30190430d93f12fa29a304288 Mon Sep 17 00:00:00 2001
++From: Viktor Hofer <viktor.hofer@microsoft.com>
++Date: Mon, 5 Jan 2026 11:43:26 +0100
++Subject: [PATCH] Fix FileVersion calculation in 2026
++
++---
++ build/common.props | 19 ++++++++++++++++++-
++ 1 file changed, 18 insertions(+), 1 deletion(-)
++
++diff --git a/build/common.props b/build/common.props
++index efd7e90e..e5f6f3ed 100644
++--- a/build/common.props
+++++ b/build/common.props
++@@ -42,7 +42,24 @@
++     <VersionSuffix Condition="'$(WilsonVersion)' == ''">$(PreviewVersionSuffix)</VersionSuffix>
++     <VersionPrefix Condition="'$(WilsonVersion)' == ''">$(WilsonCurrentVersion)</VersionPrefix>
++     <FileVersion Condition="'$(WilsonVersion)' != '' and '$(IsCustomPreview)' != 'true' ">$(WilsonVersion).$([System.DateTime]::Now.AddYears(-2019).Year)$([System.DateTime]::Now.ToString("MMdd"))</FileVersion>
++-    <FileVersion Condition="'$(WilsonVersion)' == ''">$(WilsonCurrentVersion).$([System.DateTime]::Now.AddYears(-2019).Year)$([System.DateTime]::Now.ToString("MMdd"))</FileVersion>
+++    <!-- TODO: Makes sure that the revision is higher than what's in already shipped packages (> 61231).
+++         This will overflow in 2029 though and needs a long term fix. -->
+++    <FileVersion Condition="'$(WilsonVersion)' == ''">$(WilsonCurrentVersion).$([MSBuild]::Add(
+++      61232,
+++      $([MSBuild]::Add(
+++        $([MSBuild]::Add(
+++          $([MSBuild]::Multiply(
+++            $([System.DateTime]::Now.AddYears(-2019).Year),
+++            416
+++          )),
+++          $([MSBuild]::Multiply(
+++            $([System.DateTime]::Now.ToString("MM")),
+++            32
+++          ))
+++        )),
+++        $([System.DateTime]::Now.ToString("dd"))
+++      ))
+++    ))</FileVersion>
++   </PropertyGroup>
++ 
++   <PropertyGroup>
++-- 
++2.52.0.windows.1
++
+-- 
+2.52.0
+

@@ -1,0 +1,3 @@
+ver=$(cat $SRCDIR/sdk-version.txt)
+abinfo "Set version to $ver ..."
+PKGVER=$ver

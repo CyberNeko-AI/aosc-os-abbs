@@ -1,0 +1,12 @@
+PKGNAME=dotnet-sdk-10.0-source-built-artifacts
+PKGSEC=devel
+PKGDES="Microsoft .NET 10.0 source-built artifacts"
+PKGDEP=""
+BUILDDEP="dotnet-sdk-10.0-source-built-artifacts dotnet-sdk-10.0 llvm"
+
+NOLTO=1
+USECLANG=1
+ABSPLITDBG=0
+
+# no upstream support on loongson3
+FAIL_ARCH="(loongson3)"

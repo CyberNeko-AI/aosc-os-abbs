@@ -1,0 +1,8 @@
+PKGNAME=aspnetcore-targeting-pack-10.0
+PKGSEC=devel
+PKGDES="ASP.NET Core 10.0 API definition"
+PKGDEP="dotnet-targeting-pack-10.0"
+
+ABSPLITDBG=0
+
+FAIL_ARCH="(loongson3)"

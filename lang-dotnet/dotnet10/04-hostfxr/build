@@ -1,0 +1,7 @@
+ver=$(cat $SRCDIR/runtime-version.txt)
+abinfo "Set version to $ver ..."
+PKGVER=$ver
+
+abinfo "Deploying files ..."
+install -dv "$PKGDIR"/usr/lib/dotnet
+mv -v "$SRCDIR"/output/host "$PKGDIR"/usr/lib/dotnet # 2

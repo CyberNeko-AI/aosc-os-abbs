@@ -1,0 +1,50 @@
+arch=""
+mono=""
+
+if ab_match_arch amd64; then
+    arch=x64
+elif ab_match_arch arm64; then
+    arch=arm64
+elif ab_match_arch riscv64; then
+    arch=riscv64
+elif ab_match_arch ppc64el; then
+    arch=ppc64le
+    mono="--use-mono-runtime"
+elif ab_match_arch loongarch64; then
+    arch=loongarch64
+elif ab_match_arch loongarch64_nosimd; then
+    arch=loongarch64
+else
+    aberr "Unsupported architecture."
+fi
+
+abinfo "Installing build artifacts ..."
+temp=`mktemp -d`
+mkdir -pv $temp/artifacts
+tar -xzvf /opt/Private.SourceBuilt.Artifacts.* -C $temp/artifacts
+mkdir -pv $temp/prereqs/packages/archive/
+cp -v /opt/Private.SourceBuilt.Artifacts.* $SRCDIR/prereqs/packages/archive/
+
+abinfo "Preparing .NET SDK source build ..."
+./prep-source-build.sh --no-sdk --no-artifacts --no-bootstrap \
+    --with-sdk /usr/lib/dotnet/ \
+    --with-packages $temp/artifacts/
+
+abinfo "Building .NET SDK for $arch ..."
+./build.sh -sb --os linux --rid linux-$arch --arch $arch \
+    --branding rtm -v n \
+    --with-sdk /usr/lib/dotnet/ $mono
+
+abinfo "Collecting generated tarballs ..."
+mkdir -pv $SRCDIR/output
+tar -xzvf $SRCDIR/artifacts/assets/Release/dotnet-sdk-* -C $SRCDIR/output
+
+mkdir -pv $PKGDIR/opt/
+mv -v $SRCDIR/artifacts/assets/Release/Private.SourceBuilt.Artifacts.* \
+    $PKGDIR/opt/
+
+rm -r $temp
+
+ls $SRCDIR/output/shared/Microsoft.NETCore.App > $SRCDIR/runtime-version.txt
+ls $SRCDIR/output/sdk > $SRCDIR/sdk-version.txt
+ls $SRCDIR/output/shared/Microsoft.AspNetCore.App > $SRCDIR/aspnet-version.txt

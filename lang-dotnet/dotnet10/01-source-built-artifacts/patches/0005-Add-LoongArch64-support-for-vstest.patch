@@ -1,0 +1,151 @@
+From 94439fe6b233469f8802b5ac9d1efc3c171bc5ce Mon Sep 17 00:00:00 2001
+From: Student Main <studentmain@aosc.io>
+Date: Wed, 14 Jan 2026 19:08:42 +0800
+Subject: [PATCH 5/5] Add LoongArch64 support for vstest
+
+---
+ .../src/Microsoft.TestPlatform.ObjectModel/Architecture.cs    | 1 +
+ .../PublicAPI/PublicAPI.Shipped.txt                           | 1 +
+ .../Interfaces/System/PlatformArchitecture.cs                 | 1 +
+ .../PublicAPI/PublicAPI.Shipped.txt                           | 1 +
+ .../netcore/System/PlatformEnvironment.cs                     | 1 +
+ .../netcore/System/ProcessHelper.cs                           | 1 +
+ .../Hosting/DefaultTestHostManager.cs                         | 1 +
+ .../Hosting/DotnetTestHostManager.cs                          | 3 +++
+ .../vstest.console/TestPlatformHelpers/TestRequestManager.cs  | 2 ++
+ .../Processors/PlatformArgumentProcessorTests.cs              | 4 ++--
+ 10 files changed, 14 insertions(+), 2 deletions(-)
+
+diff --git a/src/vstest/src/Microsoft.TestPlatform.ObjectModel/Architecture.cs b/src/vstest/src/Microsoft.TestPlatform.ObjectModel/Architecture.cs
+index 278c9c6b97a..bfb7aae6df3 100644
+--- a/src/vstest/src/Microsoft.TestPlatform.ObjectModel/Architecture.cs
++++ b/src/vstest/src/Microsoft.TestPlatform.ObjectModel/Architecture.cs
+@@ -14,4 +14,5 @@ public enum Architecture
+     S390x,
+     Ppc64le,
+     RiscV64,
++    LoongArch64,
+ }
+diff --git a/src/vstest/src/Microsoft.TestPlatform.ObjectModel/PublicAPI/PublicAPI.Shipped.txt b/src/vstest/src/Microsoft.TestPlatform.ObjectModel/PublicAPI/PublicAPI.Shipped.txt
+index 681d90bb9e5..20ef96f8936 100644
+--- a/src/vstest/src/Microsoft.TestPlatform.ObjectModel/PublicAPI/PublicAPI.Shipped.txt
++++ b/src/vstest/src/Microsoft.TestPlatform.ObjectModel/PublicAPI/PublicAPI.Shipped.txt
+@@ -975,3 +975,4 @@ Microsoft.VisualStudio.TestPlatform.ObjectModel.RunConfiguration.CaptureStandard
+ Microsoft.VisualStudio.TestPlatform.ObjectModel.RunConfiguration.ForwardStandardOutput.get -> bool
+ Microsoft.VisualStudio.TestPlatform.ObjectModel.RunConfiguration.DisableSharedTestHost.get -> bool
+ Microsoft.VisualStudio.TestPlatform.ObjectModel.RunConfiguration.SkipDefaultAdapters.get -> bool
++Microsoft.VisualStudio.TestPlatform.ObjectModel.Architecture.LoongArch64 = 9 -> Microsoft.VisualStudio.TestPlatform.ObjectModel.Architecture
+diff --git a/src/vstest/src/Microsoft.TestPlatform.PlatformAbstractions/Interfaces/System/PlatformArchitecture.cs b/src/vstest/src/Microsoft.TestPlatform.PlatformAbstractions/Interfaces/System/PlatformArchitecture.cs
+index 9c656677de9..2e7c12a2666 100644
+--- a/src/vstest/src/Microsoft.TestPlatform.PlatformAbstractions/Interfaces/System/PlatformArchitecture.cs
++++ b/src/vstest/src/Microsoft.TestPlatform.PlatformAbstractions/Interfaces/System/PlatformArchitecture.cs
+@@ -15,4 +15,5 @@ public enum PlatformArchitecture
+     S390x,
+     Ppc64le,
+     RiscV64,
++    LoongArch64,
+ }
+diff --git a/src/vstest/src/Microsoft.TestPlatform.PlatformAbstractions/PublicAPI/PublicAPI.Shipped.txt b/src/vstest/src/Microsoft.TestPlatform.PlatformAbstractions/PublicAPI/PublicAPI.Shipped.txt
+index 99667b0d8cf..d807e9dcd89 100644
+--- a/src/vstest/src/Microsoft.TestPlatform.PlatformAbstractions/PublicAPI/PublicAPI.Shipped.txt
++++ b/src/vstest/src/Microsoft.TestPlatform.PlatformAbstractions/PublicAPI/PublicAPI.Shipped.txt
+@@ -121,3 +121,4 @@ static Microsoft.VisualStudio.TestPlatform.ObjectModel.PlatformEqtTrace.ErrorOnI
+ static Microsoft.VisualStudio.TestPlatform.PlatformAbstractions.PlatformAssemblyExtensions.GetAssemblyLocation(this System.Reflection.Assembly! assembly) -> string!
+ virtual Microsoft.VisualStudio.TestPlatform.PlatformAbstractions.PlatformAssemblyResolver.Dispose(bool disposing) -> void
+ Microsoft.VisualStudio.TestPlatform.PlatformAbstractions.PlatformArchitecture.RiscV64 = 6 -> Microsoft.VisualStudio.TestPlatform.PlatformAbstractions.PlatformArchitecture
++Microsoft.VisualStudio.TestPlatform.PlatformAbstractions.PlatformArchitecture.LoongArch64 = 7 -> Microsoft.VisualStudio.TestPlatform.PlatformAbstractions.PlatformArchitecture
+diff --git a/src/vstest/src/Microsoft.TestPlatform.PlatformAbstractions/netcore/System/PlatformEnvironment.cs b/src/vstest/src/Microsoft.TestPlatform.PlatformAbstractions/netcore/System/PlatformEnvironment.cs
+index 31f5fde3896..c558510e22b 100644
+--- a/src/vstest/src/Microsoft.TestPlatform.PlatformAbstractions/netcore/System/PlatformEnvironment.cs
++++ b/src/vstest/src/Microsoft.TestPlatform.PlatformAbstractions/netcore/System/PlatformEnvironment.cs
+@@ -28,6 +28,7 @@ public class PlatformEnvironment : IEnvironment
+                 // preview 6 or later, so use the numerical value for now.
+                 // case System.Runtime.InteropServices.Architecture.S390x:
+                 (Architecture)5 => PlatformArchitecture.S390x,
++                (Architecture)6 => PlatformArchitecture.LoongArch64,
+                 (Architecture)8 => PlatformArchitecture.Ppc64le,
+                 (Architecture)9 => PlatformArchitecture.RiscV64,
+                 _ => throw new NotSupportedException(),
+diff --git a/src/vstest/src/Microsoft.TestPlatform.PlatformAbstractions/netcore/System/ProcessHelper.cs b/src/vstest/src/Microsoft.TestPlatform.PlatformAbstractions/netcore/System/ProcessHelper.cs
+index 24c07fa5ed6..d0794b274f0 100644
+--- a/src/vstest/src/Microsoft.TestPlatform.PlatformAbstractions/netcore/System/ProcessHelper.cs
++++ b/src/vstest/src/Microsoft.TestPlatform.PlatformAbstractions/netcore/System/ProcessHelper.cs
+@@ -41,6 +41,7 @@ public partial class ProcessHelper : IProcessHelper
+             // preview 6 or later, so use the numerical value for now.
+             // case System.Runtime.InteropServices.Architecture.S390x:
+             (Architecture)5 => PlatformArchitecture.S390x,
++            (Architecture)6 => PlatformArchitecture.LoongArch64,
+             (Architecture)8 => PlatformArchitecture.Ppc64le,
+             (Architecture)9 => PlatformArchitecture.RiscV64,
+             _ => throw new NotSupportedException(),
+diff --git a/src/vstest/src/Microsoft.TestPlatform.TestHostProvider/Hosting/DefaultTestHostManager.cs b/src/vstest/src/Microsoft.TestPlatform.TestHostProvider/Hosting/DefaultTestHostManager.cs
+index ffddd06178f..4fe942f0e04 100644
+--- a/src/vstest/src/Microsoft.TestPlatform.TestHostProvider/Hosting/DefaultTestHostManager.cs
++++ b/src/vstest/src/Microsoft.TestPlatform.TestHostProvider/Hosting/DefaultTestHostManager.cs
+@@ -293,6 +293,7 @@ public class DefaultTestHostManager : ITestRuntimeProvider2
+             PlatformArchitecture.S390x => Architecture.S390x,
+             PlatformArchitecture.Ppc64le => Architecture.Ppc64le,
+             PlatformArchitecture.RiscV64 => Architecture.RiscV64,
++            PlatformArchitecture.LoongArch64 => Architecture.LoongArch64,
+             _ => throw new NotSupportedException(),
+         };
+ 
+diff --git a/src/vstest/src/Microsoft.TestPlatform.TestHostProvider/Hosting/DotnetTestHostManager.cs b/src/vstest/src/Microsoft.TestPlatform.TestHostProvider/Hosting/DotnetTestHostManager.cs
+index f536907aae1..75ee76cba50 100644
+--- a/src/vstest/src/Microsoft.TestPlatform.TestHostProvider/Hosting/DotnetTestHostManager.cs
++++ b/src/vstest/src/Microsoft.TestPlatform.TestHostProvider/Hosting/DotnetTestHostManager.cs
+@@ -648,6 +648,8 @@ public class DotnetTestHostManager : ITestRuntimeProvider2
+                     return PlatformArchitecture.Ppc64le;
+                 case Architecture.RiscV64:
+                     return PlatformArchitecture.RiscV64;
++                case Architecture.LoongArch64:
++                    return PlatformArchitecture.LoongArch64;
+                 case Architecture.AnyCPU:
+                 case Architecture.Default:
+                 default:
+@@ -667,6 +669,7 @@ public class DotnetTestHostManager : ITestRuntimeProvider2
+                 Architecture.S390x => platformAchitecture == PlatformArchitecture.S390x,
+                 Architecture.Ppc64le => platformAchitecture == PlatformArchitecture.Ppc64le,
+                 Architecture.RiscV64 => platformAchitecture == PlatformArchitecture.RiscV64,
++                Architecture.LoongArch64 => platformAchitecture == PlatformArchitecture.LoongArch64,
+                 _ => throw new TestPlatformException($"Invalid target architecture '{targetArchitecture}'"),
+             };
+ 
+diff --git a/src/vstest/src/vstest.console/TestPlatformHelpers/TestRequestManager.cs b/src/vstest/src/vstest.console/TestPlatformHelpers/TestRequestManager.cs
+index 6cb8de3d70a..69eff660590 100644
+--- a/src/vstest/src/vstest.console/TestPlatformHelpers/TestRequestManager.cs
++++ b/src/vstest/src/vstest.console/TestPlatformHelpers/TestRequestManager.cs
+@@ -888,6 +888,8 @@ internal class TestRequestManager : ITestRequestManager
+                     return Architecture.Ppc64le;
+                 case PlatformArchitecture.RiscV64:
+                     return Architecture.RiscV64;
++                case PlatformArchitecture.LoongArch64:
++                    return Architecture.LoongArch64;
+                 default:
+                     EqtTrace.Error($"TestRequestManager.TranslateToArchitecture: Unhandled architecture '{targetArchitecture}'.");
+                     break;
+diff --git a/src/vstest/test/vstest.console.UnitTests/Processors/PlatformArgumentProcessorTests.cs b/src/vstest/test/vstest.console.UnitTests/Processors/PlatformArgumentProcessorTests.cs
+index a0119490ace..ce1c985c159 100644
+--- a/src/vstest/test/vstest.console.UnitTests/Processors/PlatformArgumentProcessorTests.cs
++++ b/src/vstest/test/vstest.console.UnitTests/Processors/PlatformArgumentProcessorTests.cs
+@@ -85,7 +85,7 @@ public class PlatformArgumentProcessorTests
+     {
+         ExceptionUtilities.ThrowsException<CommandLineException>(
+             () => _executor.Initialize("foo"),
+-            "Invalid platform type: {0}. Valid platform types are X86, X64, ARM, ARM64, S390x, Ppc64le, RiscV64.",
++            "Invalid platform type: {0}. Valid platform types are X86, X64, ARM, ARM64, S390x, Ppc64le, RiscV64, LoongArch64.",
+             "foo");
+     }
+ 
+@@ -94,7 +94,7 @@ public class PlatformArgumentProcessorTests
+     {
+         ExceptionUtilities.ThrowsException<CommandLineException>(
+             () => _executor.Initialize("AnyCPU"),
+-            "Invalid platform type: {0}. Valid platform types are X86, X64, ARM, ARM64, S390x, Ppc64le, RiscV64.",
++            "Invalid platform type: {0}. Valid platform types are X86, X64, ARM, ARM64, S390x, Ppc64le, RiscV64, LoongArch64.",
+             "AnyCPU");
+     }
+ 
+-- 
+2.52.0
+

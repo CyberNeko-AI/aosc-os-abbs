@@ -1,0 +1,8 @@
+PKGNAME=dotnet-templates-10.0
+PKGSEC=devel
+PKGDES=".NET 10.0 project templates"
+PKGDEP=""
+
+ABSPLITDBG=0
+
+FAIL_ARCH="(loongson3)"

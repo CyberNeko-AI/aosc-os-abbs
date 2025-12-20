@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+first_run() {
+    /usr/share/dotnet/dotnet exec /usr/share/dotnet/sdk/@VER@/dotnet.dll internal-reportinstallsuccess "aoscpackage" > /dev/null 2>&1 || true
+}
+
+source /etc/profile.d/dotnet.sh
+INSTALL_TEMP_HOME=$(mktemp -t dotnet-sdk.XXXXXXXXXX)
+HOME=$INSTALL_TEMP_HOME first_run

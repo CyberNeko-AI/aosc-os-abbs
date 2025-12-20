@@ -1,0 +1,3 @@
+ver=$(cat $SRCDIR/runtime-version.txt)
+abinfo "Set version to $ver ..."
+PKGVER=$ver

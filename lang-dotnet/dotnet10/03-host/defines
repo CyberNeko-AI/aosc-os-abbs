@@ -1,0 +1,8 @@
+PKGNAME=dotnet-host
+PKGSEC=libs
+PKGDES="Microsoft .NET Host"
+PKGDEP="glibc gcc-runtime"
+
+ABSPLITDBG=0
+
+FAIL_ARCH="(loongson3)"

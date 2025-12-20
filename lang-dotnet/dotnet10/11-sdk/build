@@ -1,0 +1,19 @@
+ver=$(cat $SRCDIR/sdk-version.txt)
+abinfo "Set version to $ver ..."
+PKGVER=$ver
+
+abinfo "Deploying files ..."
+install -dv "$PKGDIR"/usr/lib/dotnet
+install -dv "$PKGDIR"/usr/lib/dotnet/packs
+mv -v "$SRCDIR"/output/sdk "$PKGDIR"/usr/lib/dotnet # 3
+mv -v "$SRCDIR"/output/sdk-manifests "$PKGDIR"/usr/lib/dotnet # 4
+# exclude sdk-aot content
+mv -v "$SRCDIR"/output/packs/Microsoft.NETCore.App.Runtime.!(NativeAOT*) "$PKGDIR"/usr/lib/dotnet/packs # 18
+mv -v "$SRCDIR"/output/packs/Microsoft.AspNetCore.App.Runtime.* "$PKGDIR"/usr/lib/dotnet/packs # 18
+if ! ab_match_arch ppc64el; then
+    mv -v "$SRCDIR"/output/library-packs "$PKGDIR"/usr/lib/dotnet # 4
+fi
+
+abinfo "Calibrating postinst ..."
+sed -e "s|\@VER\@|$ver|g" \
+    -i "$SRCDIR"/autobuild/postinst

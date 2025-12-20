@@ -1,0 +1,8 @@
+PKGNAME=dotnet-apphost-pack-10.0
+PKGSEC=libs
+PKGDES=".NET 10.0 native application template"
+PKGDEP=""
+
+ABSPLITDBG=0
+
+FAIL_ARCH="(loongson3)"

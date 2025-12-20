@@ -1,0 +1,8 @@
+PKGNAME=dotnet-runtime-10.0
+PKGSEC=libs
+PKGDES=".NET runtime 10.0"
+PKGDEP="dotnet-hostfxr-10.0 dotnet-runtime-deps-10.0"
+
+ABSPLITDBG=0
+
+FAIL_ARCH="(loongson3)"

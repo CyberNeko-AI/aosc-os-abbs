@@ -1,0 +1,9 @@
+PKGNAME=dotnet-runtime-deps-10.0
+PKGSEC=libs
+PKGDES="Runtime dependencies meta package for .NET 10.0 applications"
+PKGDEP="glibc gcc-runtime krb5 zlib openssl icu"
+
+ABSPLITDBG=0
+ABTYPE=dummy
+
+FAIL_ARCH="(loongson3)"
