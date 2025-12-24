@@ -1,8 +1,8 @@
 PKGNAME=marble-runtime
 PKGSEC=kde
 PKGDEP="attica fontconfig freetype gpsd kauth kbookmarks kcodecs kcompletion \
-        kconfig kconfigwidgets kcoreaddons kcrash ki18n kio \
-        kitemviews kjobwidgets knewstuff kpackage kparts kservice \
+        kconfig kconfigwidgets kcoreaddons kcrash ki18n \
+        kjobwidgets knewstuff kpackage kparts kservice \
         ktextwidgets kwallet kwidgetsaddons kxmlgui libwlocate perl phonon \
         protobuf shapelib shared-mime-info solid sonnet zlib"
 BUILDDEP="extra-cmake-modules kdoctools"
