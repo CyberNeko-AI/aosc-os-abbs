@@ -1,6 +1,6 @@
 PKGNAME=box64
 PKGSEC=utils
-PKGDEP="glibc gcc-runtime"
+PKGDEP="gcc-runtime glibc ncurses"
 PKGDES="Userspace emulator for running x86-64 applications on non-x86 systems"
 ABTYPE="cmakeninja"
 
