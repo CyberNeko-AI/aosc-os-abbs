@@ -1,11 +1,99 @@
 PKGNAME=libxml2
 PKGDES="Utilities and libraries for parsing XMLs"
 PKGSEC=utils
-PKGDEP="zlib readline ncurses xz"
+PKGDEP="zlib readline ncurses xz icu"
 
-AUTOTOOLS_AFTER=(
-	--with-history
-	--with-threads
-	--without-python
+ABTYPE=meson
+MESON_AFTER=(
+    "-Dicu=enabled"
+    "-Dlegacy=enabled"
+    "-Ddocs=disabled"
+    "-Dpython=disabled"
+    "-Dhttp=enabled"
 )
-ABTYPE=autotools
+
+PKGBREAK="0ad<=0.27.1-2 akonadi<=23.08.5 appstream<=1.0.4-1 aria2<=1.37.0 \
+          artikulate<=23.08.5 atril<=1.28.1-1 audacious<=4.5.1 augeas<=1.14.1 \
+          autofs<=5.1.9-1 autogen<=5.18.16-2 bijiben<=40.1-4 bind<=1:9.20.13 \
+          brasero<=1:3.12.3-1 caja<=1:1.28.0 cantor<=23.08.5-1 \
+          caribou<=0.4.21-5 castget<=2.0.1 cinnamon<=5.8.3-3 clamav<=1.5.1 \
+          compiz<=0.9.14.2-4 conky<=1.22.0 ctags<=6.2.20251005.0 \
+          cuda<=13.1.0+590.44.01 darktable<=1:5.4.0 \
+          dia<=0.97.3-1 digikam<=8.8.0 dleyna-connector-dbus<=0.3.0-2 \
+          dleyna-core<=0.6.0-1 dleyna-renderer<=0.6.0-1 dvdauthor<=0.7.2-4 \
+          ebook-tools<=0.2.2-4 emacs<=30.2-1 emukit<=20240730 eom<=1:1.28.0 \
+          epiphany<=42.4-2 evince<=42.3-2 evolution<=3.44.4-7 \
+          evolution-data-server<=3.44.4-5 evolution-ews<=3.42.0-1 \
+          fcitx<=4.2.9.9-1 flatpak<=1.17.2 flatpak-builder<=1.4.7 \
+          flickcurl<=1.26-4 folks<=0.15.5 font-manager<=0.9.4-1 \
+          fontforge<=20230101-2 foomatic-db-engine<=4.0.13 gconf<=3.2.6-9 \
+          gdal<=3.12.0-1 gdome2<=0.8.1+debian-3 geany-plugins<=2.1-1 \
+          gedit<=42.2 gettext<=1:0.26 gfbgraph<=0.2.5 gitg<=41 glade<=3.40.0 \
+          gnome-applets<=3.44.0-1 gnome-builder<=42.1-9 \
+          gnome-calculator<=42.2-2 gnome-control-center<=42.10-1 \
+          gnome-maps<=42.3 gnome-online-accounts<=3.44.0 \
+          gnome-panel<=3.44.0-1 gnote<=42.1 gnustep-base<=1.28.0-2 \
+          goffice<=0.10.48 graphicsmagick<=1.3.46 grilo-plugins<=0.3.15-2 \
+          gstreamer<=1.26.10 gtef<=2.0.1-1 gtksourceview-3<=3.24.11-3 \
+          gtksourceview-4<=4.8.3 gtksourceview-5<=5.18.0 gtranslator<=46.1-1 \
+          gupnp<=1.2.4-1 gupnp-av<=0.12.11 gupnp-dlna<=0.10.5-1 \
+          gvfs<=1.50.2-3 handbrake<=1.10.1 hivex<=1.3.24-1 hotdoc<=0.13.7 \
+          html5-parser<=0.4.9-4 httpd<=2.4.66 hwloc<=2.10.0 icecast<=2.4.4-3 \
+          imagemagick<=6.9.13+16 imagemagick+7<=7.1.1+32 \
+          inkscape<=1.4.3 kbibtex-trinity<=14.1.5 \
+          kdoctools<=5.115.0 khelpcenter<=23.08.5-1 kio<=5.115.0 \
+          kitinerary<=23.08.5-7 kodi<=21.3-1 koffice-trinity<=14.1.5 \
+          kopete<=23.08.5 ktouch<=23.08.5 labwc<=0.9.3 lasem<=1:0.5.2 \
+          lash<=0.6.0~rc2-3 libabw<=0.1.3 libaccounts-glib<=1.27 \
+          libavif<=1.2.1 libbluray<=1.4.0 libcmis<=0.5.2-4 libcroco<=0.6.13-2 \
+          libe-book<=0.1.3 libetonyek<=0.1.9-4 libffado<=2.4.9 \
+          libgda<=6.0.0-2 libgdata<=0.18.1 libglade<=2.6.4-8 libgnt<=2.14.3-1 \
+          libgovirt<=0.3.8 libgphoto2<=2.5.30 libgpod<=0.8.3-13 \
+          libgrss<=0.7.0-1 libgsf<=1.14.47 libguestfs<=1.54.1-3 \
+          libgweather<=1:4.1.0-2 libical<=3.0.18-1 liblangtag<=0.6.3-1 \
+          libmateweather<=1:1.28.0 libmusicbrainz-5<=5.1.0-4 libodfgen<=0.1.8 \
+          libosinfo<=1.12.0 libpurple<=2.14.14 libqalculate<=4.5.1-1 \
+          librcc<=0.2.13 libreoffice<=25.8.0.4-1 librsvg<=2.61.3 \
+          libsoup<=2.74.2-2 libspatialite<=5.0.1-1 libvirt<=11.9.0 \
+          libvirt-glib<=5.0.0 libvisio<=0.1.7-1 libxkbcommon<=1.13.1 \
+          libxklavier<=5.4-4 libxml++<=5.4.0 libxml++-2.6<=2.42.3-1 \
+          libxslt<=1.1.43 libzapojit<=0.0.3-3 liferea<=1.14.6 \
+          lighttpd<=1.4.82 lincity-ng<=2.14.2 lldpd<=1.0.18-1 \
+          llvm-18<=18.1.8-12 llvm-19<=19.1.6-6 llvm-20<=20.1.8-3 \
+          llvm-21<=21.1.6 llvm-runtime-18<=18.1.8-12 \
+          llvm-runtime-19<=19.1.6-6 llvm-runtime-20<=20.1.8-3 \
+          llvm-runtime-21<=21.1.6 lttng-tools<=2.14.0 lxml<=6.0.0 \
+          m17n-lib<=1.8.4 manaplus<=2.1.3.17 mariadb<=11.7.2-2 \
+          mate-applets<=1:1.28.1 mate-calc<=1.28.0-1 \
+          mate-control-center<=1.28.1 mate-media<=1.28.1 \
+          mate-notification-daemon<=1:1.28.3 mate-system-monitor<=1:1.28.1 \
+          mlt<=7.34.1-1 msitools<=0.101 netcf<=0.2.8-5 netpbm<=1:10.73.34-1 \
+          networkmanager-openconnect<=1.2.10 nfs-utils<=2.6.2-2 \
+          nghttp2<=1.65.0 nokogiri<=1.18.10 oath-toolkit<=2.6.12 \
+          obconf<=2.0.4-5 obconf-qt<=0.16.4 open-vm-tools<=13.0.5-1 \
+          openbabel<=3.1.1-3 openbox<=3.6.1-2 opencollada<=1:1.6.68-3 \
+          openconnect<=9.12 openscad<=2021.01+git20251218 openslide<=4.0.0 \
+          osinfo-db-tools<=1.10.0 owntone<=28.12-1 pcsx2<=1.6.0+git20210825-1 \
+          pdal<=2.9.2-3 perl-xml-libxml<=2.0210 perl-xml-libxslt<=2.003000 \
+          phodav<=3.0 php<=1:8.5.1 php7<=1:0-2 pidgin<=2.14.14 pluma<=1.28.0 \
+          podofo<=0.10.3 polymake<=3.3-3 postgresql<=2:17.5 \
+          postgresql-13<=13.22 postgresql-14<=14.19 postgresql-15<=15.14 \
+          postgresql-16<=16.10 postgresql-17<=17.6 postgresql-18<=18.0 \
+          pstoedit<=4.02 pyside2<=5.15.16-2 pyside6<=6.10.0 qgis<=3.44.5 \
+          qt-5<=1:5.15.16+webengine5.15.18+webkit5.212.0+kde20241121-6 \
+          qt-6<=6.10.0 raptor2<=2.0.16-1 rest<=0.8.1 rhythmbox<=3.4.9 \
+          rnote<=0.13.1-2 rocm-llvm<=7.1.1 rrdtool<=1.7.2 rygel<=0.40.4-3 \
+          sane-backends<=1.4.0 scribus<=1.6.4 shared-mime-info<=2.4-1 \
+          shotwell<=0.32.13 snapper<=0.13.0 spdylay<=1.4.0-5 \
+          sra-tools<=3.0.3-3 strigi<=0.7.8-6 tdelibs<=14.1.5 \
+          tdenetwork<=14.1.5 tdesdk<=14.1.5 tdewebdev<=14.1.5 \
+          telepathy-gabble<=0.18.4-2 telepathy-logger<=0.8.2-3 \
+          tellico-trinity<=14.1.5 thermald<=2.15.10 totem-pl-parser<=3.26.6-1 \
+          tracker<=3.7.3-2 tracker-miners<=3.3.1-4 tuba<=0.10.3 \
+          tumbler<=4.20.0-1 umbrello<=23.08.5-1 vcdimager<=2.0.1-2 \
+          virt-viewer<=11.0 virtualbox<=7.2.4-1 vlc<=3.0.23+2-2 \
+          vtk<=9.5.2-1 warmux<=1:11.04.1-4 wayland<=1.24.0 \
+          webkit2gtk<=1:2.50.3 wireshark<=4.6.2 wv<=1.2.9-3 \
+          xfce4-weather-plugin<=0.12.0 xfce4-xkb-plugin<=0.9.0 \
+          xine-lib<=1.2.13-8 xmlsec<=1.2.36-1 xournalpp<=1.3.1 xreader<=4.6.1 \
+          xscreensaver<=6.08 yaz<=5.34.0-1"

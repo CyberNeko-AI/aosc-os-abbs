@@ -1,2 +1,0 @@
-abinfo "Fixing permission problems for document files ..."
-find "$SRCDIR"/doc -type f -exec chmod -v 0644 {} +
