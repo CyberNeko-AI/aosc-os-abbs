@@ -1,0 +1,2 @@
+abinfo "Setting build flags ..."
+export CFLAGS="${CFLAGS} -std=gnu17"
