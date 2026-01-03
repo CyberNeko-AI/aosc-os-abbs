@@ -6,7 +6,7 @@ BUILDDEP="docbook-xsl gobject-introspection gtk-doc intltool libxslt vala"
 PKGDES="GNOME service to access online accounts"
 
 ABTYPE=meson
-MESON_AFTER="-Dgoabackend=true \
+MESON_AFTER="-Dgoabackend=false \
              -Dinspector=false \
              -Dexchange=true \
              -Dfacebook=true \
