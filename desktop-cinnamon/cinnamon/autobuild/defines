@@ -11,7 +11,7 @@ BUILDDEP="gnome-common gobject-introspection gtk-doc intltool vim"
 PKGDES="GNOME Shell fork aiming to provide traditional user experience"
 
 MESON_AFTER=(
-    '-Ddocs=true'
+    '-Ddocs=false'
     '-Dbuild_recorder=true'
     '-Ddisable_networkmanager=false'
 )
