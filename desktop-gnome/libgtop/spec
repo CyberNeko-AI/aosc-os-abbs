@@ -1,5 +1,4 @@
-VER=2.38.0
-REL=2
+VER=2.41.3
 SRCS="tbl::https://download.gnome.org/sources/libgtop/${VER:0:4}/libgtop-$VER.tar.xz"
-CHKSUMS="sha256::4f6c0e62bb438abfd16b4559cd2eca0251de19e291c888cdc4dc88e5ffebb612"
+CHKSUMS="sha256::775676df958e2ea2452f7568f28b2ea581063d312773dd5c0b7624c1b9b2da8c"
 CHKUPDATE="anitya::id=13146"

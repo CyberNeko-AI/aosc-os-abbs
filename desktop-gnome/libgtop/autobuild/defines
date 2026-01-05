@@ -1,7 +1,9 @@
 PKGNAME=libgtop
 PKGSEC=libs
 PKGDEP="glib x11-lib"
-BUILDDEP="gobject-introspection gtk-doc intltool gnome-common"
-PKGDES="A library that reads information about processes and the running system"
+BUILDDEP="gobject-introspection gnome-common"
+PKGDES="Library to read information about running processes and the operating system"
 
-AUTOTOOLS_AFTER="--enable-gtk-doc"
+AUTOTOOLS_AFTER=(
+    '--disable-gtk-doc'
+)
