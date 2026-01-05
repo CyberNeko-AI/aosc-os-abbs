@@ -1,0 +1,9 @@
+PKGNAME=gcr-common
+PKGSEC=libs
+PKGDES="Common files for GCR"
+
+ABHOST=noarch
+ABTYPE=dummy
+
+PKGBREAK="gcr<=3.41.1-2"
+PKGREP="gcr<=3.41.1-2"
