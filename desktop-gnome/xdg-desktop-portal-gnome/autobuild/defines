@@ -1,5 +1,10 @@
 PKGNAME=xdg-desktop-portal-gnome
 PKGSEC=gnome
-PKGDEP="dbus fontconfig gsettings-desktop-schemas gtk-4 xdg-desktop-portal \
-        xdg-desktop-portal-gtk libadwaita gnome-desktop"
+PKGDEP="dbus fontconfig gnome-desktop gsettings-desktop-schemas gtk-4 \
+        libadwaita xdg-desktop-portal xdg-desktop-portal-gtk"
 PKGDES="Backend implementation for xdg-desktop-portal using GNOME"
+
+ABTYPE=meson
+MESON_AFTER=(
+    '-Dsystemd=enabled'
+)
