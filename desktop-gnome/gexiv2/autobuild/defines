@@ -1,11 +1,15 @@
-PKGNAME=gexiv2 
+PKGNAME=gexiv2
 PKGSEC=gnome
 PKGDEP="exiv2 pygobject-3"
-BUILDDEP="gobject-introspection gtk-doc vala"
+BUILDDEP="gobject-introspection vala"
 PKGDES="GObject-based wrapper around the Exiv2 library"
 
-MESON_AFTER="-Dgtk_doc=true \
-             -Dintrospection=true \
-             -Dvapi=true \
-             -Dtools=true \
-             -Dpython3=true"
+ABTYPE=meson
+MESON_AFTER=(
+    '-Dtests=false'
+    '-Dgtk_doc=false'
+    '-Dintrospection=true'
+    '-Dvapi=true'
+    '-Dtools=true'
+    '-Dpython3=true'
+)
