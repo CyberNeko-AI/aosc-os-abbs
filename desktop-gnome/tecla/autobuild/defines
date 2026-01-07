@@ -1,0 +1,6 @@
+PKGNAME=tecla
+PKGSEC=gnome
+PKGDEP="libadwaita libxkbcommon"
+PKGDES="Keyboard layout viewer for GNOME"
+
+ABTYPE=meson
