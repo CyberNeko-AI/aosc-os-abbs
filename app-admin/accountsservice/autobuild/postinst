@@ -1,3 +1,0 @@
-if [[ -x /usr/bin/systemctl ]]; then
-    systemctl enable accounts-daemon
-fi

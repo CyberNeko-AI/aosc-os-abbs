@@ -1,11 +1,18 @@
 PKGNAME=accountsservice
 PKGSEC=libs
-PKGDEP="glib polkit systemd"
-BUILDDEP="intltool gobject-introspection gtk-doc vala xmlto"
+PKGDEP="glib libxcrypt polkit systemd"
+BUILDDEP="gobject-introspection vala"
 PKGDES="D-Bus interface for user account query and manipulation"
 
-MESON_AFTER="-Delogind=false \
-             -Dintrospection=true \
-             -Dvapi=true \
-             -Ddocbook=true \
-             -Dgtk_doc=true"
+ABTYPE=meson
+# FIXME: -Dcreate_homed=false, test later?
+MESON_AFTER=(
+    '-Dadmin_group=wheel'
+    '-Dminimum_uid=1000'
+    '-Delogind=false'
+    '-Dintrospection=true'
+    '-Dvapi=true'
+    '-Ddocbook=false'
+    '-Dgtk_doc=false'
+    '-Dtests=false'
+)
