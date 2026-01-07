@@ -1,8 +1,10 @@
 PKGNAME=libwacom
 PKGSEC=libs
-PKGDEP="glib libgudev systemd"
-BUILDDEP="doxygen"
+PKGDEP="glib libgudev systemd libevdev"
 PKGDES="Library to identify Wacom tablets and their features"
 
 ABTYPE=meson
-MESON_AFTER="-Dtests=disabled"
+MESON_AFTER=(
+    '-Ddocumentation=disabled'
+    '-Dtests=disabled'
+)
