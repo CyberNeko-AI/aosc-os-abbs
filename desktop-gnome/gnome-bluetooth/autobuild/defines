@@ -1,11 +1,12 @@
 PKGNAME=gnome-bluetooth
 PKGSEC=gnome
-PKGDEP="bluez gsound gtk-4 hicolor-icon-theme libadwaita libcanberra \
-        libnotify tdb"
-BUILDDEP="gobject-introspection gtk-doc intltool itstool"
-PKGDES="Bluetooth management and control support for GNOME"
+PKGDEP="bluez gsound gtk-4 libadwaita libnotify upower"
+BUILDDEP="gobject-introspection"
+PKGDES="Bluetooth manager for GNOME"
 
 ABTYPE=meson
-MESON_AFTER="-Dsendto=true \
-             -Dgtk_doc=true \
-             -Dintrospection=true"
+MESON_AFTER=(
+    '-Dsendto=true'
+    '-Dgtk_doc=false'
+    '-Dintrospection=true'
+)
