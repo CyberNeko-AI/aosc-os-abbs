@@ -1,20 +1,22 @@
 PKGNAME=gnome-settings-daemon
 PKGSEC=gnome
-PKGDEP="colord cups dconf gcr geoclue2 geocode-glib gnome-desktop \
-        gsettings-desktop-schemas hicolor-icon-theme libcanberra libgudev \
-        libgweather libibus libnotify librsvg libwacom networkmanager nss \
-        pcsclite pulseaudio rfkill systemd upower libwacom"
-BUILDDEP="docbook-xsl gtk-doc intltool libxslt"
+PKGDEP="alsa-lib colord cups gcr-4 geoclue2 geocode-glib gnome-desktop \
+        libcanberra libgweather networkmanager systemd xwayland"
 PKGDES="Manages GNOME session and applications parameters"
 
-MESON_AFTER="-Dsystemd=true \
-             -Dalsa=true \
-             -Dcolord=true \
-             -Dcups=true \
-             -Dgudev=true \
-             -Dnetwork_manager=true \
-             -Drfkill=true \
-             -Dsmartcard=true \
-             -Dusb-protection=true \
-             -Dwayland=true \
-             -Dwwan=true"
+MESON_AFTER=(
+    '-Dsystemd=true'
+    '-Delogind=false'
+    '-Dalsa=true'
+    '-Dgudev=true'
+    '-Dcups=true'
+    '-Dnetwork_manager=true'
+    '-Drfkill=true'
+    '-Dsmartcard=true'
+    '-Dusb-protection=true'
+    '-Dx11=true'
+    '-Dxwayland=true'
+    '-Dwwan=true'
+    '-Dgcr3=false'
+    '-Dcolord=true'
+)

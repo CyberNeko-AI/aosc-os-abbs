@@ -1,5 +1,4 @@
-VER=42.2
-REL=1
+VER=49.1
 SRCS="tbl::https://download.gnome.org/sources/gnome-settings-daemon/${VER%%.*}/gnome-settings-daemon-$VER.tar.xz"
-CHKSUMS="sha256::9c449714aa8ec1271c0db5137df3458195943f05ccd0ac8935d93397770bab00"
+CHKSUMS="sha256::2a9957fc4f91c3b9127b49484179bef485120d9c1c208e44d44e6a746e6cc1c1"
 CHKUPDATE="anitya::id=12860"
