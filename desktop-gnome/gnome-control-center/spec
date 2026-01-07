@@ -1,5 +1,4 @@
-VER=42.10
-REL=1
+VER=49.3
 SRCS="https://download.gnome.org/sources/gnome-control-center/${VER%.*}/gnome-control-center-$VER.tar.xz"
-CHKSUMS="sha256::ad824e10bb5231b70cd65903a12752d362b9099b0c90aba346a6983e0a4f6d5a"
+CHKSUMS="sha256::cf93d37164fa2e10be6f08f15eb917b1f1ea7f9dd9bac7de9ffdd812fa8d9cfc"
 CHKUPDATE="anitya::id=5408"
