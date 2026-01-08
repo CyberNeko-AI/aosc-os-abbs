@@ -1,5 +1,4 @@
-VER=3.42.0
-REL=1
+VER=3.58.2
 SRCS="https://download.gnome.org/sources/evolution-ews/${VER:0:4}/evolution-ews-$VER.tar.xz"
-CHKSUMS="sha256::585336df7829cbf965a2858d4594a2b8d8910111b2dcae1a68ccaf1af50cd1af"
+CHKSUMS="sha256::fa6fc0dfd17ef61a630ad33c645b8358c4266766126f1716b3c79fefd290c8fb"
 CHKUPDATE="anitya::id=18167"
