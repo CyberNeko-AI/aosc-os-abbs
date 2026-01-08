@@ -1,5 +1,4 @@
-VER=46.0
-REL=1
+VER=48.3
 SRCS="tbl::https://download.gnome.org/sources/ghex/${VER%%.*}/ghex-$VER.tar.xz"
-CHKSUMS="sha256::a1c46f3020cb358b8323025db3a539c97d994a4c46f701f48edc6357f7fbcbd1"
+CHKSUMS="sha256::cbc84427b2adea9403502a125f366b9f288813f72e81bf6b19154606f159dd39"
 CHKUPDATE="anitya::id=10936"
