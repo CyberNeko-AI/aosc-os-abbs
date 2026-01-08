@@ -1,5 +1,4 @@
-VER=42.4
-REL=2
+VER=49.2
 SRCS="https://download.gnome.org/sources/epiphany/${VER%.*}/epiphany-$VER.tar.xz"
-CHKSUMS="sha256::370938ad2920eeb28bc2435944776b7ba55a0e2ede65836f79818cfb7e8f0860"
+CHKSUMS="sha256::b3ba3d68213e87f81f1733e85500c37b82b5938f9009e4fe89994963d5fb2b8e"
 CHKUPDATE="anitya::id=10903"

@@ -1,17 +1,13 @@
 PKGNAME=epiphany
 PKGSEC=gnome
-PKGDEP="at-spi2-core dconf desktop-file-utils gcr gnome-desktop \
-        gsettings-desktop-schemas iso-codes \
-        json-glib libnotify libsecret libsoup libwnck-3 nettle nss \
-        webkit2gtk libdazzle libhandy libportal"
-BUILDDEP="appstream-glib docbook-xml gobject-introspection gtk-doc \
-          intltool itstool startup-notification"
+PKGDEP="iso-codes json-glib gcr-4 gtk-4 libarchive libadwaita libportal libsecret libsoup-3 nettle webkit2gtk"
+BUILDDEP="blueprint-compiler docutils itstool"
 PKGDES="Web browser based on the WebKit rendering engine"
 
 MESON_AFTER=(
     '-Ddeveloper_mode=false'
-    '-Dlibportal=enabled'
-    '-Dnetwork_tests=disabled'
     '-Dtech_preview=false'
-    '-Dsoup2=enabled'
+    '-Dunit_tests=disabled'
+    '-Dgranite=disabled'
+    '-Dman-pages=enabled'
 )
