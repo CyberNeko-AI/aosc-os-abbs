@@ -2,8 +2,8 @@ PKGNAME=adwaita-icon-theme
 PKGSEC=gnome
 PKGDEP="hicolor-icon-theme gtk-update-icon-cache"
 PKGRECOM="adwaita-icon-theme-legacy"
-BUILDDEP=" icon-naming-utils intltool"
-PKGDES="Adwaita icon theme, the official icon theme of GNOME"
+PKGDES="Default icon theme for GNOME"
 
-ABSHADOW=0
+ABTYPE=meson
+
 ABHOST=noarch
