@@ -1,5 +1,4 @@
-VER=3.40.0
+VER=3.48.0
 SRCS="https://download.gnome.org/sources/accerciser/${VER:0:4}/accerciser-$VER.tar.xz"
-CHKSUMS="sha256::537545d64813c2d2b14a77b64e24010015e9977cf5fb3cf8aa65dbce01ea3625"
+CHKSUMS="sha256::90288e8900a274a3aee20530eb391645994ae9867220916ba0f5c4677bfe9f4d"
 CHKUPDATE="anitya::id=13116"
-REL="2"
