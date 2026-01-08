@@ -1,3 +1,0 @@
-make
-mkdir -p "$PKGDIR"
-cp -ra {etc,usr} "$PKGDIR"/
