@@ -1,5 +1,5 @@
-VER=3.54.0
+VER=3.58.0
 SRCS="tbl::https://download.gnome.org/sources/alacarte/${VER:0:4}/alacarte-$VER.tar.xz"
-CHKSUMS="sha256::9b2c4973aae38c3f28275f543d085eaeb4a2d808d0ace738718f9d9c49b4d80a"
+CHKSUMS="sha256::3f4eb9370a9cd97547ec2f182d091f59315eea5ed335cc8243d4df2354862d52"
 CHKUPDATE="anitya::id=13979"
 REL="1"

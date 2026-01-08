@@ -1,10 +1,7 @@
 PKGNAME=alacarte
 PKGSEC=gnome
-PKGDEP="gnome-menus pygobject-3 gtk-3"
+PKGDEP="gnome-menus pygobject-3"
 BUILDDEP="docbook-xsl intltool libtool libxslt"
 PKGDES="Menu editor for GNOME"
 
 ABHOST=noarch
-AUTOTOOLS_AFTER="--prefix=/usr \
-                 --sysconfdir=/etc \
-                 PYTHON=/usr/bin/python3"
