@@ -109,7 +109,6 @@ runtime-desktop/vte
 desktop-gnome/gnome-terminal
 app-devel/mm-common
 runtime-common/jsonrpc-glib
-desktop-gnome/gnome-builder
 desktop-gnome/gnome-calculator
 desktop-gnome/gnome-calendar
 desktop-gnome/gnome-characters

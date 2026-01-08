@@ -89,7 +89,6 @@ runtime-desktop/malcontent
 desktop-gnome/gnome-control-center
 desktop-gnome/gnome-shell
 desktop-gnome/gnome-terminal
-desktop-gnome/gnome-builder
 desktop-gnome/gnome-calculator
 desktop-gnome/gnome-calendar
 desktop-gnome/gnome-characters

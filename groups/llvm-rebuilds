@@ -16,7 +16,6 @@ app-devel/llvm
 app-devel/llvm-20
 app-devel/qtcreator
 app-devel/spirv-llvm-translator
-desktop-gnome/gnome-builder
 desktop-kde/kdevelop
 lang-dlang/ldc
 lang-python/pyside2
