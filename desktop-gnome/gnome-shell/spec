@@ -1,5 +1,4 @@
-VER=42.4
-REL="6"
+VER=49.2
 SRCS="https://download.gnome.org/sources/gnome-shell/${VER%%.*}/gnome-shell-$VER.tar.xz"
-CHKSUMS="sha256::875ff2970ea9fb7a05506e32a0d50dc917f41b4ca37134b41377f9c82873c54e"
+CHKSUMS="sha256::d13b855d8df99debf7eccf810b6e054fdb0aeb87ef8b131918a6e4c9197a02c7"
 CHKUPDATE="anitya::id=5409"
