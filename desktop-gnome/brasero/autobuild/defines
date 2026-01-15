@@ -6,5 +6,8 @@ PKGDEP="gtk-3 gst-plugins-good-1-0 totem-pl-parser cdrkit cdrdao hicolor-icon-th
 BUILDDEP="intltool itstool nautilus gtk-doc gnome-common"
 PKGDES="Disc burning application for GNOME"
 
-AUTOTOOLS_AFTER="--disable-caches --disable-schemas-compile"
-PKGEPOCH=1
+ABTYPE=autotools
+AUTOTOOLS_AFTER=(
+        "--disable-caches"
+        "--disable-schemas-compile"
+)
