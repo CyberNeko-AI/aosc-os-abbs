@@ -1,4 +1,6 @@
 VER=1.28.0
+REL=1
+EPOCH=1
 SRCS="tbl::https://pub.mate-desktop.org/releases/${VER:0:4}/caja-$VER.tar.xz"
 CHKSUMS="sha256::1e3014ce1455817ec2ef74d09efdfb6835d8a372ed9a16efb5919ef7b821957a"
 CHKUPDATE="anitya::id=16409"
