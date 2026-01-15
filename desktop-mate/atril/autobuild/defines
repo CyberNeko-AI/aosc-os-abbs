@@ -6,12 +6,15 @@ PKGDEP="dconf dbus desktop-file-utils libsecret libspectre \
 BUILDDEP="gobject-introspection mate-common texlive yelp-tools"
 PKGDES="Document viewer for MATE"
 
-AUTOTOOLS_AFTER="--enable-djvu \
-                 --enable-t1lib \
-                 --enable-pixbuf \
-                 --enable-comics \
-                 --enable-xps \
-                 --enable-introspection \
-                 --disable-synctex \
-                 --enable-dvi \
-                 --enable-gtk-doc"
+ABTYPE=autotools
+AUTOTOOLS_AFTER=(
+        "--enable-djvu"
+        "--enable-t1lib"
+        "--enable-pixbuf"
+        "--enable-comics"
+        "--enable-xps"
+        "--enable-introspection"
+        "--disable-synctex"
+        "--enable-dvi"
+        "--disable-gtk-doc"
+)
