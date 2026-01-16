@@ -4,7 +4,10 @@ PKGDEP="evolution-data-server evolution libmspack libsoup"
 BUILDDEP="gtk-doc gobject-introspection intltool itstool vim cmake"
 PKGDES="Microsoft Exchange Web Services for Evolution"
 
-CMAKE_AFTER="-DLIB_INSTALL_DIR=/usr/lib \
-             -DENABLE_MAINTAINER_MODE=OFF \
-             -DENABLE_SCHEMAS_COMPILE=OFF \
-             -DWITH_MSPACK=ON"
+ABTYPE=cmakeninja
+CMAKE_AFTER=(
+    "-DLIB_INSTALL_DIR=/usr/lib"
+    "-DENABLE_MAINTAINER_MODE=OFF"
+    "-DENABLE_SCHEMAS_COMPILE=OFF"
+    "-DWITH_MSPACK=ON"
+)
