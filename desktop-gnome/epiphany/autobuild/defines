@@ -8,6 +8,7 @@ BUILDDEP="appstream-glib docbook-xml gobject-introspection gtk-doc \
           intltool itstool startup-notification"
 PKGDES="Web browser based on the WebKit rendering engine"
 
+ABTYPE=meson
 MESON_AFTER=(
     '-Ddeveloper_mode=false'
     '-Dlibportal=enabled'
