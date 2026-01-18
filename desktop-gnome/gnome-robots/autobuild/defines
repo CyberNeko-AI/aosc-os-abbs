@@ -1,6 +1,0 @@
-PKGNAME=gnome-robots
-PKGSEC=gnome
-PKGDEP="desktop-file-utils gsound gtk-3 libcanberra \
-        libgnome-games-support librsvg"
-BUILDDEP="appstream-glib intltool itstool vala"
-PKGDES="Avoid the robots and make them crash into each other"
