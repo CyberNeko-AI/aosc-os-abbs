@@ -1,6 +1,9 @@
 PKGNAME=gtranslator
 PKGSEC=gnome
-PKGDEP="gspell gtk-4 gtksourceview-5 libadwaita libdazzle libgda libhandy \
-        libsoup-3 gtk-update-icon-cache"
+PKGDEP="gsettings-desktop-schemas gtk-4 gtksourceview-5 json-glib libadwaita libsoup-3 libspelling sqlite"
 BUILDDEP="itstool"
-PKGDES="A Gettext catalog editor for GNOME"
+PKGDES="Gettext catalog editor for GNOME"
+
+MESON_AFTER=(
+    '-Dprofile=default'
+)
