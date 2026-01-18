@@ -1,5 +1,4 @@
-VER=3.36.0
-SRCS="https://download.gnome.org/sources/gnome-logs/${VER:0:4}/gnome-logs-$VER.tar.xz"
-CHKSUMS="sha256::44766b61a6899e1b4c51ed7a8840608e6b9277f341f856a1e5c08dbd7a733670"
+VER=49.0
+SRCS="https://download.gnome.org/sources/gnome-logs/${VER%%.*}/gnome-logs-$VER.tar.xz"
+CHKSUMS="sha256::f8f579eb0bb6d9a8d6ae5ee1423f9447af91200785178b50bbadd4ac2d255d45"
 CHKUPDATE="anitya::id=1193"
-REL=1
