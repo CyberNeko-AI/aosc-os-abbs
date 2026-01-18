@@ -1,5 +1,4 @@
-VER=3.44.1
-REL=1
+VER=3.58.1
 SRCS="https://download.gnome.org/sources/gnome-terminal/${VER%.*}/gnome-terminal-$VER.tar.xz"
-CHKSUMS="sha256::fb6f20ee1ff231a9aaedab13d5dc6e5a64c955711224848b790086e88959d37b"
+CHKSUMS="sha256::1dfbaeb55a71cfc36a21aa1ee4a0d459c3fde8bb3d65b09fbca695c7fddfbeba"
 CHKUPDATE="anitya::id=10896"
