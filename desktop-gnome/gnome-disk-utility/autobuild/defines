@@ -1,9 +1,7 @@
 PKGNAME=gnome-disk-utility
 PKGSEC=gnome
-PKGDEP="at-spi2-core cairo desktop-file-utils gcc-runtime gdk-pixbuf glib \
-        glibc gtk-3 libcanberra libdvdread libhandy libpwquality libsecret \
-        pango systemd udisks-2 xz"
-BUILDDEP="docbook-xsl glade gnome-settings-daemon gtk-doc intltool vala"
+PKGDEP="gtk-3 libcanberra libdvdread libhandy libnotify libpwquality udisks-2"
+BUILDDEP="docbook-xsl"
 PKGDES="Disk management utility for GNOME"
 
 MESON_AFTER=(
