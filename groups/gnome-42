@@ -155,7 +155,6 @@ desktop-gnome/ghex
 runtime-vcs/libgit2-glib
 desktop-gnome/glade
 desktop-gnome/gnome-chess
-desktop-gnome/gnome-recipes
 desktop-gnome/gnome-remote-desktop
 desktop-gnome/gnome-shell-extension-gsconnect
 desktop-gnome/gnome-todo
