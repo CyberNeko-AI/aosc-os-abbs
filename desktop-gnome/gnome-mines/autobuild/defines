@@ -1,5 +1,0 @@
-PKGNAME=gnome-mines
-PKGSEC=gnome
-PKGDEP="desktop-file-utils gtk-3 libgnome-games-support librsvg"
-BUILDDEP="appstream-glib intltool itstool vala"
-PKGDES="Clear hidden mines in a minefield"

@@ -1,4 +1,0 @@
-VER=40.1
-SRCS="tbl::https://download.gnome.org/sources/gnome-mines/${VER%.*}/gnome-mines-$VER.tar.xz"
-CHKSUMS="sha256::3502e9b3f71cb3b2e711c0e6019187febcc2bca877e3d456dcab700f7be31272"
-CHKUPDATE="anitya::id=10891"
