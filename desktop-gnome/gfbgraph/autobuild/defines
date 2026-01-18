@@ -4,4 +4,9 @@ PKGDEP="gnome-online-accounts"
 BUILDDEP="gobject-introspection gtk-doc intltool itstool"
 PKGDES="GLib/GObject wrapper for the Facebook Graph API"
 
-AUTOTOOLS_AFTER="--enable-gtk-doc --enable-introspection --disable-silent-rules"
+ABTYPE=autotools
+AUTOTOOLS_AFTER=(
+    "--disable-gtk-doc"
+    "--enable-introspection"
+    "--disable-silent-rules"
+)
