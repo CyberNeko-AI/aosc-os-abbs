@@ -41,7 +41,6 @@ desktop-gnome/gmime
 desktop-gnome/gmime-3
 app-multimedia/gnash
 desktop-gnome/gnome-menus
-desktop-gnome/gob2
 app-devel/gobject-introspection
 runtime-database/gom
 runtime-imaging/graphene
