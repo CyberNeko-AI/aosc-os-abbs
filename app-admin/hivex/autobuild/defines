@@ -4,15 +4,18 @@ PKGDEP="libxml2 perl"
 BUILDDEP="findlib ocaml perl-io-stringy python-3 ruby"
 PKGDES="System for extracting the contents of Windows Registry"
 
-AUTOTOOLS_AFTER="--enable-largefile \
-                 --disable-rpath \
-                 --enable-nls \
-                 --enable-ocaml \
-                 --enable-perl \
-                 --enable-python \
-                 --enable-ruby \
-                 --with-readline \
-                 PYTHON=/usr/bin/python3"
+ABTYPE=autotools
+AUTOTOOLS_AFTER=(
+    "--enable-largefile"
+    "--disable-rpath"
+    "--enable-nls"
+    "--enable-ocaml"
+    "--enable-perl"
+    "--enable-python"
+    "--enable-ruby"
+    "--with-readline"
+    "PYTHON=/usr/bin/python3"
+)
 
 ABSHADOW=0
 NOSTATIC=0
