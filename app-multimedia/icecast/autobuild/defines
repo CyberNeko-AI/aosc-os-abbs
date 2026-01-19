@@ -1,4 +1,4 @@
 PKGNAME=icecast
 PKGSEC=sound
 PKGDEP="curl libtheora libvorbis libxslt speex"
-PKGDES="A streaming media server"
+PKGDES="Streaming media server"
