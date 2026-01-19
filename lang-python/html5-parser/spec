@@ -1,4 +1,5 @@
 VER=0.4.12
+REL=1
 SRCS="git::commit=tags/v$VER::https://github.com/kovidgoyal/html5-parser.git"
 CHKSUMS="SKIP"
 CHKUPDATE="anitya::id=19897"
