@@ -1,4 +1,4 @@
-VER=1.2.3
+VER=1.6.4
 SRCS="tbl::https://download.gnome.org/sources/gssdp/${VER:0:3}/gssdp-$VER.tar.xz"
-CHKSUMS="sha256::a263dcb6730e3b3dc4bbbff80cf3fab4cd364021981d419db6dd5a8e148aa7e8"
+CHKSUMS="sha256::ff97fdfb7f561d3e6813b4f6a2145259e7c2eff43cc0e63f3fd031d0b6266032"
 CHKUPDATE="anitya::id=1262"
