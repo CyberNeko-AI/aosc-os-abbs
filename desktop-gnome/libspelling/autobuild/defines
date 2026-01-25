@@ -1,5 +1,15 @@
 PKGNAME=libspelling
 PKGSEC=gnome
 PKGDEP="enchant-2 gcc-runtime glib glibc gtk-4 gtksourceview-5 icu pango"
-BUILDDEP="gi-docgen gobject-introspection vala sysprof"
+BUILDDEP="gobject-introspection vala"
 PKGDES="Spellcheck library for GTK 4"
+
+ABTYPE=meson
+MESON_AFTER=(
+    '-Ddocs=false'
+    '-Denchant=enabled'
+    '-Dintrospection=enabled'
+    '-Dsysprof=false'
+    '-Dvapi=true'
+    '-Dinstall-static=false'
+)
