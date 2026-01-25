@@ -1,9 +1,14 @@
 PKGNAME=orca
 PKGSEC=gnome
-PKGDEP="at-spi2-core brltty dbus-python gsettings-desktop-schemas gtk-3 \
-        hicolor-icon-theme liblouis pyatspi pyxdg speech-dispatcher x11-app"
-BUILDDEP="intltool itstool"
-PKGDES="Screen reader for individuals who are blind or visually impaired"
+PKGDEP="at-spi2-core brltty dasbus liblouis libwnck-3 pygobject-3 \
+        pypsutil speech-dispatcher"
+BUILDDEP="itstool"
+PKGDES="Screen reader for GNOME"
 
-AUTOTOOLS_AFTER="PYTHON=/usr/bin/python3"
+ABTYPE=meson
+# Note: -Dspiel=false, "Build experimental Spiel support"
+MESON_AFTER=(
+    '-Dspiel=false'
+)
+
 ABHOST=noarch
