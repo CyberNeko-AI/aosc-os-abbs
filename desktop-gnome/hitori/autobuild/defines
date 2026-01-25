@@ -1,5 +1,0 @@
-PKGNAME=hitori
-PKGSEC=gnome
-PKGDEP="desktop-file-utils gtk-3"
-BUILDDEP="appstream-glib intltool itstool"
-PKGDES="A logic game similar to Sudoku"

@@ -1,4 +1,0 @@
-VER=3.38.4
-SRCS="https://download.gnome.org/sources/hitori/${VER%.*}/hitori-$VER.tar.xz"
-CHKSUMS="sha256::8993cc91fb923788e389e03ec2aa7876d15c12bad9204cf65b2ffa0ed3922f7d"
-CHKUPDATE="anitya::id=13809"
