@@ -4,5 +4,7 @@ PKGDEP="dconf gtk-3 libxklavier"
 BUILDDEP="gobject-introspection vala"
 PKGDES="GNOME keyboard management library"
 
-MESON_AFTER="-Dgir=true \
-             -Dvapi=true"
+ABTYPE=meson
+MESON_AFTER=(
+    '-Dvapi=true'
+)
