@@ -1,4 +1,0 @@
-VER=41.1
-SRCS="tbl::https://download.gnome.org/sources/swell-foop/${VER%.*}/swell-foop-$VER.tar.xz"
-CHKSUMS="sha256::243f7a55e5e753a51086eec2568320d7692d5b15a66a723ab591705e0d8ef6dd"
-CHKUPDATE="anitya::id=10898"
