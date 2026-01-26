@@ -1,14 +1,15 @@
 PKGNAME=nemo
 PKGSEC=Cinnamon
-PKGDEP="libexif gvfs dconf desktop-file-utils exempi python-3 \
-        cinnamon-desktop libnotify libxml2 packagekit xapps"
-BUILDDEP="gnome-common gobject-introspection gtk-doc intltool polib"
-PKGDES="Cinnamon file manager"
+PKGDEP="cinnamon-desktop exempi gtk-3 json-glib libexif tinysparql xapps"
+BUILDDEP="intltool"
+PKGDES="File manager for Cinnamon"
 
-# FIXME: Disable Tracker until we update to a version that supports Tracker 3.
-MESON_AFTER="-Dexif=true \
-             -Dxmp=true \
-             -Dgtk_doc=true \
-             -Dselinux=false \
-             -Dempty_view=false \
-             -Dtracker=false"
+ABTYPE=meson
+MESON_AFTER=(
+    '-Dexif=true'
+    '-Dxmp=true'
+    '-Dgtk_doc=false'
+    '-Dselinux=false'
+    '-Dempty_view=false'
+    '-Dtracker=true'
+)

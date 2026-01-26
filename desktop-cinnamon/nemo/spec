@@ -1,4 +1,4 @@
-VER=6.4.0
+VER=6.6.3
 SRCS="git::commit=tags/$VER::https://github.com/linuxmint/nemo"
 CHKSUMS="SKIP"
 CHKUPDATE="anitya::id=6391"
