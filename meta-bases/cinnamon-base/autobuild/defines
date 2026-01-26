@@ -1,12 +1,14 @@
 PKGNAME=cinnamon-base
 PKGSEC=Bases
 PKGDEP="cinnamon cinnamon-control-center network-manager-applet \
-        cinnamon-translations cinnamon-screensaver"
-PKGRECOM="blueberry brasero desktop-base eog file-roller gedit \
-          gnome-packagekit gnome-terminal nemo"
-PKGDES="Meta package for Cinnamon desktop environment"
+        cinnamon-translations cinnamon-screensaver cinnamon-session \
+        gnome-backgrounds adwaita-fonts"
+PKGRECOM="brasero gnome-text-editor xarchiver xreader xviewer"
+PKGDES="Meta package for Cinnamon"
 
 VER_NONE=1
 ABHOST=noarch
 PKGBREAK="cinnamon-meta<=0-1"
 PKGREP="cinnamon-meta<=0-1"
+
+ABTYPE=dummy
