@@ -1,8 +1,8 @@
 PKGNAME=sound-juicer
-PKGDES="A CD ripper application for GNOME"
-PKGDEP="libmusicbrainz-5 libdiscid gtk-3 gst-plugins-base-1-0 gst-plugins-good-1-0 brasero \
-        hicolor-icon-theme iso-codes"
-BUILDDEP="appstream-glib intltool itstool yelp-tools"
 PKGSEC=gnome
+PKGDEP="brasero gsettings-desktop-schemas gstreamer gtk-3 iso-codes \
+        libcanberra libdiscid libmusicbrainz-5 udisks-2"
+BUILDDEP="itstool"
+PKGDES="CD ripper application for GNOME"
 
-ABSHADOW=0
+ABTYPE=meson
