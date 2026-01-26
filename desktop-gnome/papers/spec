@@ -1,0 +1,4 @@
+VER=49.3
+SRCS="https://download.gnome.org/sources/papers/${VER%.*}/papers-$VER.tar.xz"
+CHKSUMS="sha256::76975d9d1fd2f88c368fec8c31f0e56fa9dd93a1b8e85faceaa403c59a55aa90"
+CHKUPDATE="anitya::id=372871"
