@@ -1,10 +1,17 @@
 PKGNAME=xapps
 PKGSEC=x11
 PKGDEP="libdbusmenu libgnomekbd pygobject-3"
-BUILDDEP="gnome-common gobject-introspection vala"
-PKGDES="Cross-desktop libraries and common resources"
+BUILDDEP="gobject-introspection vala"
+PKGDES="Libraries and common resources for multiple desktop environments"
 
 ABTYPE=meson
-MESON_AFTER="-Ddocs=true \
-             -Dstatus-notifier=true \
-             -Dapp-lib-only=false"
+MESON_AFTER=(
+    '-Ddocs=false'
+    '-Dstatus-notifier=true'
+    '-Dapp-lib-only=false'
+    '-Ddebian_derivative=false'
+    '-Dmate=true'
+    '-Dxfce=true'
+    '-Dintrospection=true'
+    '-Dvapi=true'
+)
