@@ -1,5 +1,0 @@
-PKGNAME=template-glib
-PKGSEC=libs
-PKGDEP="glib"
-BUILDDEP="gobject-introspection meson ninja vala"
-PKGDES="A templating library for GLib"

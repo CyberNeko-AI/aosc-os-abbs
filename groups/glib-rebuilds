@@ -122,7 +122,6 @@ runtime-web/sofia-sip
 runtime-desktop/speech-dispatcher
 app-network/sshfs
 app-multimedia/streamripper
-desktop-gnome/template-glib
 desktop-trinity/tqt3
 app-admin/udisks-2
 runtime-web/uhttpmock
