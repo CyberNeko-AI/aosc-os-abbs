@@ -1,6 +1,8 @@
 PKGNAME=cinnamon-translations
 PKGSEC=Cinnamon
 PKGDEP=""
-PKGDES="Translation data for the Cinnamon desktop environment"
+PKGDES="Translation data for Cinnamon"
+
+ABTYPE=self
 
 ABHOST=noarch
