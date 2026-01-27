@@ -1,5 +1,5 @@
 PKGNAME=mousepad
-PKGDES="A simple text editor for Xfce"
+PKGDES="Text editor for Xfce"
 PKGDEP="libxfce4ui dbus-glib glib gtksourceview-3 desktop-file-utils dconf exo gspell"
 BUILDDEP="intltool perl xfce4-dev-tools meson"
 PKGSEC=xfce
