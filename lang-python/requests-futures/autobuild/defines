@@ -1,0 +1,8 @@
+PKGNAME=requests-futures
+PKGSEC=python
+PKGDEP="requests"
+BUILDDEP="python-build python-installer wheel"
+PKGDES="Small add-on for the python requests http library"
+
+ABHOST=noarch
+ABTYPE=python
