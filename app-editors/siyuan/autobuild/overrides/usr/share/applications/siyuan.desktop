@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=SiYuan
+Exec=/usr/bin/siyuan %U
+Terminal=false
+Type=Application
+Icon=siyuan
+StartupWMClass=SiYuan
+Comment=Refactor your thinking
+Categories=Editors;
+

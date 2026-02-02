@@ -1,0 +1,31 @@
+From 4938c991d6a3ba51cb82310e8b29511cdc268070 Mon Sep 17 00:00:00 2001
+From: SkyBird233 <52884766+SkyBird233@users.noreply.github.com>
+Date: Mon, 2 Feb 2026 15:42:08 +0800
+Subject: [PATCH 1/2] Remove update related buttons
+
+---
+ app/src/config/about.ts | 6 ------
+ 1 file changed, 6 deletions(-)
+
+diff --git a/app/src/config/about.ts b/app/src/config/about.ts
+index ca3ff2058..1671b7701 100644
+--- a/app/src/config/about.ts
++++ b/app/src/config/about.ts
+@@ -27,14 +27,8 @@ export const about = {
+     <div class="fn__flex-1">
+         ${window.siyuan.languages.currentVer} v${Constants.SIYUAN_VERSION}
+         <span id="isInsider"></span>
+-        <div class="b3-label__text">${window.siyuan.languages.downloadLatestVer}</div>
+     </div>
+     <div class="fn__space"></div>
+-    <div class="fn__flex-center fn__size200 config__item-line">
+-        <button id="checkUpdateBtn" class="b3-button b3-button--outline fn__block">
+-            <svg><use xlink:href="#iconRefresh"></use></svg>${window.siyuan.languages.checkUpdate}
+-        </button>
+-    </div>
+ </div>`;
+         return `<div class="fn__flex b3-label config__item${isBrowser() || window.siyuan.config.system.isMicrosoftStore || "std" !== window.siyuan.config.system.container || "linux" === window.siyuan.config.system.os ? " fn__none" : ""}">
+     <div class="fn__flex-1">
+-- 
+2.52.0
+
