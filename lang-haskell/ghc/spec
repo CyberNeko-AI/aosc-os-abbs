@@ -1,11 +1,10 @@
-VER=9.4.8
-BOOTSTRAP_VER=9.4.8
+VER=9.14.1
+BOOTSTRAP_VER=9.14.1
 SRCS="tbl::https://www.haskell.org/ghc/dist/$VER/ghc-${VER}-src.tar.xz \
 	tbl::https://downloads.haskell.org/~ghc/${BOOTSTRAP_VER}/ghc-${BOOTSTRAP_VER}-x86_64-deb10-linux.tar.xz \
 	tbl::https://downloads.haskell.org/~ghc/${BOOTSTRAP_VER}/ghc-${BOOTSTRAP_VER}-aarch64-deb10-linux.tar.xz"
-CHKSUMS="sha256::0bf407eb67fe3e3c24b0f4c8dea8cb63e07f63ca0f76cf2058565143507ab85e \
-         sha256::fc77eaae5b89f29177bf159fd95ce438066ec64a46bf69df61b267102afdb10e \
-         sha256::278e287e1ee624712b9c6d7803d1cf915ca1cce56e013b0a16215eb8dfeb1531"
+CHKSUMS="sha256::2a83779c9af86554a3289f2787a38d6aa83d00d136aa9f920361dd693c101e77 \
+         sha256::c812cbadc685eba6e92778f9de1ebd0f1ea513cdea42db2d487fbd17e88ca3d1 \
+         sha256::526c352cceddbf6c580e17ade7e782e3b21b4182d328b2d454c9f13ca7c08992"
 SUBDIR=ghc-${VER}
 CHKUPDATE="anitya::id=906"
-REL=1
