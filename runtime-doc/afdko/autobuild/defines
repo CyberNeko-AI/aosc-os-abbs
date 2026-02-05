@@ -1,0 +1,4 @@
+PKGNAME=afdko
+PKGSEC=libs
+PKGDES="Adobe Font Development Kit for OpenType"
+ABTYPE=cmakeninja
