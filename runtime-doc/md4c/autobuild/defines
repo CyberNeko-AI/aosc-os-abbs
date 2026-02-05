@@ -1,0 +1,4 @@
+PKGNAME=md4c
+PKGSEC=libs
+PKGDES="C Markdown parser"
+ABTYPE=cmakeninja
