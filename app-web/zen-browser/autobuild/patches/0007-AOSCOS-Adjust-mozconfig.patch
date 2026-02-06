@@ -1,0 +1,114 @@
+From 45a937ace44ad3dd7a28085d3e68b40a99d00f8b Mon Sep 17 00:00:00 2001
+From: Jiangjin Wang <kaymw@aosc.io>
+Date: Tue, 3 Feb 2026 05:56:14 -0500
+Subject: [PATCH 7/7] AOSCOS: Adjust mozconfig
+
+- Set prefix to /usr.
+- Disable updater.
+- Update dependency settings.
+- Disable boostrapping.
+
+Ref: aosc-os-abbs/app-web/firefox.
+---
+ configs/common/mozconfig |  3 +-
+ configs/linux/mozconfig  | 62 +++++++++++++++++++++-------------------
+ 2 files changed, 34 insertions(+), 31 deletions(-)
+
+diff --git a/configs/common/mozconfig b/configs/common/mozconfig
+index 4ddc1f28..e1858e40 100644
+--- a/configs/common/mozconfig
++++ b/configs/common/mozconfig
+@@ -48,7 +48,7 @@ if test "$ZEN_RELEASE"; then
+ 
+   # TODO: Make this successful in builds
+   # ac_add_options --enable-clang-plugin
+-  ac_add_options --enable-bootstrap=-sccache
++  # ac_add_options --enable-bootstrap=-sccache
+ 
+   ac_add_options --enable-optimize
+ 
+@@ -59,7 +59,6 @@ if test "$ZEN_RELEASE"; then
+   ac_add_options --disable-tests
+ 
+   ac_add_options --enable-rust-simd
+-  ac_add_options --enable-wasm-simd
+ 
+   ac_add_options --disable-geckodriver
+   ac_add_options --disable-rust-tests
+diff --git a/configs/linux/mozconfig b/configs/linux/mozconfig
+index 20d28e59..ec024ff4 100644
+--- a/configs/linux/mozconfig
++++ b/configs/linux/mozconfig
+@@ -11,36 +11,40 @@ else
+     export CXX=clang++
+ fi
+ 
+-if test "$ZEN_RELEASE"; then
+-    if test "$SURFER_COMPAT" = "x86_64"; then
+-        ac_add_options --target=x86_64-pc-linux
+-        ac_add_options --enable-eme=widevine
+-
+-        # Enable Profile Guided Optimization
+-        if ! test "$ZEN_GA_DISABLE_PGO"; then
+-            export MOZ_PGO=1
+-            ac_add_options MOZ_PGO=1
+-        fi
+-    elif test "$SURFER_COMPAT" = "aarch64"; then
+-        ac_add_options --target=aarch64-linux-gnu
+-
+-        # override LTO settings
+-        export MOZ_LTO=cross,thin
+-        ac_add_options --enable-lto=cross,thin
+-    fi
+-
+-    # Disable DMD and ELF hacks, enable linker lld
+-    ac_add_options --disable-dmd
+-    ac_add_options --enable-linker=lld
+-    ac_add_options --disable-elf-hack
+-    ac_add_options --disable-necko-wifi
+-
+-    # Stripping options for release builds
+-    ac_add_options --enable-install-strip
+-    ac_add_options --enable-strip
+-    export STRIP_FLAGS="--strip-debug --strip-unneeded"
+-fi
++# Disable DMD and necko-wifi
++ac_add_options --disable-dmd
++ac_add_options --disable-necko-wifi
+ 
+ # Common options
+ ac_add_options --enable-alsa
+ ac_add_options --enable-pulseaudio
++
++# Basic path definitions.
++ac_add_options --prefix=/usr
++ac_add_options --libdir=/usr/lib
++
++# Toolchain settings.
++ac_add_options --disable-strip
++ac_add_options --disable-install-strip
++ac_add_options --enable-hardening
++
++# Optimize
++ac_add_options --enable-optimize="-O2"
++
++# Dependencies.
++ac_add_options --disable-bootstrap
++ac_add_options --enable-system-ffi
++ac_add_options --without-system-jpeg
++ac_add_options --with-system-libevent
++ac_add_options --with-system-libvpx
++ac_add_options --with-system-nspr
++ac_add_options --with-system-nss
++ac_add_options --with-system-zlib
++ac_add_options --without-system-icu
++
++# Features.
++ac_add_options --enable-chrome-format=omni
++ac_add_options --enable-js-shell
++ac_add_options --enable-av1
++ac_add_options --disable-tests
++ac_add_options --disable-updater
+-- 
+2.52.0
+

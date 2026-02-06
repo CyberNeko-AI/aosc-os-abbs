@@ -1,0 +1,25 @@
+abinfo "Downloading localization data ..."
+L10N_COMMIT="$(cat "${SRCDIR}/build/firefox-cache/l10n-last-commit-hash")"
+git clone --depth=1 --revision "${L10N_COMMIT}" \
+	"https://github.com/mozilla-l10n/firefox-l10n" \
+	"firefox-l10n"
+
+for lang in $(cat "${SRCDIR}/locales/supported-languages"); do
+	LANG_CODE="$(grep "^$lang:" "${SRCDIR}/locales/language-maps" | cut -d':' -f2)"
+	if [ -z "$LANG_CODE" ]; then
+		LANG_CODE="$lang";
+	fi
+	abinfo "Copying localization data for $LANG_CODE"
+	cp -Rv "${SRCDIR}/firefox-l10n/${LANG_CODE}" \
+		"${SRCDIR}/engine/browser/locales/"
+	cp -Rv "${SRCDIR}/locales/${lang}" \
+		"${SRCDIR}/engine/browser/locales/"
+done
+
+abinfo "Building zen-browser ..."
+export SURFER_PLATFORM="linux"
+export ZEN_RELEASE=1
+npm run build
+
+abinfo "Installing zen-browser ..."
+DESTDIR="${PKGDIR}" "${SRCDIR}/engine/mach" install
