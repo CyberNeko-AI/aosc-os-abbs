@@ -1,4 +1,0 @@
-VER=102.15.1
-SRCS="https://ftp.mozilla.org/pub/firefox/releases/${VER}esr/source/firefox-${VER}esr.source.tar.xz"
-CHKSUMS="sha256::09194fb765953bc6979a35aa8834118c453b9d6060bf1ec4e134551bad740113"
-CHKUPDATE="html::url=https://ftp.mozilla.org/pub/firefox/releases/;pattern=(102\.\d+\.\d+)esr"
