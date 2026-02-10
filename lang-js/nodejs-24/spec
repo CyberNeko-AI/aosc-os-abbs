@@ -1,0 +1,5 @@
+VER=24.13.0
+SRCS="tbl::https://nodejs.org/dist/v$VER/node-v$VER.tar.xz"
+CHKSUMS="sha256::320fe909cbb347dcf516201e4964ef177b8138df9a7f810d0d54950481b3158b"
+CHKUPDATE="anitya::id=374342"
+ENVREQ="total_mem_per_core=2"

@@ -1,0 +1,8 @@
+PKGNAME=nodejs-24
+PKGSEC=devel
+PKGDEP="python-3 icu zlib brotli libuv openssl ca-certs nghttp2 nghttp3 ngtcp2 sqlite zstd ada"
+BUILDDEP="chrpath unzip jq"
+PKGDES="evented I/O for V8 Javascript (LTS branch 24.x)"
+
+# https://github.com/nodejs/node/issues/44195#issuecomment-1545966528
+NOLTO=1
